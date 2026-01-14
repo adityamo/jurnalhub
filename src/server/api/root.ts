@@ -1,6 +1,4 @@
 import { authRouter } from "./routers/auth";
-import { categoryController } from "./routers/product/category";
-import { productController } from "./routers/product/product";
 import { profileController } from "./routers/profile";
 import { registerBusiness } from "./routers/regbusiness";
 import { createTRPCRouter } from "@/server/api/trpc";
@@ -13,9 +11,7 @@ import { createTRPCRouter } from "@/server/api/trpc";
 export const appRouter = createTRPCRouter({
   auth: authRouter,
   regcompany: registerBusiness,
-  category: categoryController,
   profile: profileController,
-  product: productController,
 });
 
 // export type definition of API

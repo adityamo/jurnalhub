@@ -22,27 +22,9 @@ const BannerExample = () => {
         </div>
         <div className="w-full px-4">
           <div className="relative z-10 mx-auto max-w-[745px]">
-            <div className="mt-10">
-              <img
-                src="/assets/images/hero/tab-admin.png"
-                alt=""
-                className="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
-              />
-            </div>
-            <div className="absolute -left-16 bottom-0 z-[-1] ">
-              <img
-                src="/assets/images/hero/circle.svg"
-                alt=""
-                className="hidden lg:block"
-              />
-            </div>
-            <div className="absolute -right-16 top-0 z-[-1]">
-              <img
-                src="/assets/images/hero/circle.svg"
-                alt=""
-                className="hidden lg:block"
-              />
-            </div>
+            <div className="mt-10"></div>
+            <div className="absolute -left-16 bottom-0 z-[-1] "></div>
+            <div className="absolute -right-16 top-0 z-[-1]"></div>
           </div>
         </div>
       </Container>

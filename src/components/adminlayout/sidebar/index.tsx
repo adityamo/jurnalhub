@@ -28,7 +28,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, user }: SidebarProps) => {
     if (user) {
       setStoreName(user.storeName);
     }
-  }, []);
+  }, [user]);
 
   return (
     <ClickOutside onClick={() => setSidebarOpen(false)}>

@@ -2,7 +2,6 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { getServerSession, type NextAuthOptions } from "next-auth";
 import { prisma } from "@/server/db";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
 import { User as UserModel } from "@prisma/client";
 
 declare module "next-auth" {
@@ -44,19 +43,6 @@ export const authOptions: NextAuthOptions = {
         const user = await prisma.user.findUnique({
           where: { email: payload.email },
         });
-
-        if (!user || !user.password) {
-          throw new Error("No user found");
-        }
-
-        const isValidPassword = await bcrypt.compare(
-          payload.password,
-          user.password
-        );
-
-        if (!isValidPassword) {
-          return null;
-        }
 
         return user;
         // return { id: user.id, name: user.name, email: user.email };

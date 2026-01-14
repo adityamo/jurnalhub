@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/utils";
 
 import React, {
   createContext,

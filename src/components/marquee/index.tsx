@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/utils";
 
 interface MarqueeProps {
   className?: string;

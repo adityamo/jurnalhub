@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { getJsonData } from "./utils";
 import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient();

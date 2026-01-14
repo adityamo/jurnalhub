@@ -35,9 +35,7 @@ type Props = {
 export default async function RootLayout({ children }: Props) {
   return (
     <html className="">
-      <head className="">
-        <link rel="stylesheet" href="/assets/iconfonts/icons.css" />
-      </head>
+      <head className=""></head>
       <body className={`${fontSans.className}`}>
         <NextTopLoader
           color="#84cc16"

@@ -20,34 +20,7 @@ export const authRouter = createTRPCRouter({
   getUserInfo: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
-      const user = await ctx.prisma.user.findUnique({
-        where: {
-          id: input.id,
-        },
-        include: {
-          M001_Company: true, // Asumsikan terdapat relasi 'company' di model Prisma
-          M003_Store: true,
-          M1001_Roles: true,
-        },
-      });
-
-      if (!user) {
-        throw new Error("User not found");
-      }
-
-      const finalResult = {
-        id: user.id,
-        name: user.name,
-        companyId: user.M001_Company?.id || null,
-        companyName: user.M001_Company?.companyName || null,
-        image: user.image || null,
-        storeId: user.M003_Store?.id || null,
-        storeName: user.M003_Store?.storeName || null,
-        rolesId: user.M1001_Roles?.id || null,
-        rolesName: user.M1001_Roles?.rolesName || null,
-      };
-
-      return finalResult;
+      return "";
     }),
   registerUser: publicProcedure
     .input(UserRegisterSchema)
@@ -66,24 +39,11 @@ export const authRouter = createTRPCRouter({
         });
       }
 
-      const findRoles = await prisma.m1001_Roles.findFirst({
-        where: {
-          rolesName: "Owner",
-        },
-      });
-
-      if (!findRoles) {
-        throw new TRPCError({
-          code: "INTERNAL_SERVER_ERROR",
-          message: `Roles tidak ditemukan`,
-        });
-      }
-
       const registerData: any = {
         name: name,
         password: passwordEncrypt,
         email: email,
-        rolesId: findRoles.id,
+        rolesId: "",
       };
 
       const user = await prisma.user.create({
