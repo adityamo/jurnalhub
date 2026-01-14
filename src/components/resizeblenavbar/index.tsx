@@ -1,7 +1,7 @@
 "use client";
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/utils";
 import React, { useRef, useState } from "react";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { FiX, FiMenu } from "react-icons/fi";
 import {
   motion,
   AnimatePresence,
@@ -221,9 +221,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <FiX className="text-black dark:text-white" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <FiMenu className="text-black dark:text-white" onClick={onClick} />
   );
 };
 
