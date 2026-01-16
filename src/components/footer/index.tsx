@@ -8,7 +8,7 @@ import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 const FooterLanding = () => {
   return (
-    <footer className="relative overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-gray-50 bg-gradient-to-b from-[#1B004D] to-[#2E0A6F] pt-10">
+    <footer className="relative overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-gray-50 bg-slate-900 pt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
         <div className="sm:col-span-2 lg:col-span-1">
           <a
@@ -16,20 +16,17 @@ const FooterLanding = () => {
             className="relative  z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
           >
             <Image
-              src={"/assets/img/brand/sentra-color.svg"}
+              src="/assets/logo/sentrapub-white.svg"
               width={300}
               height={300}
               alt="dytama-icon"
-              className="h-8 w-8 lg:h-10 lg:w-10"
+              className="w-20 lg:w-50"
             />
-            <span className=" text-sm lg:text-lg text-white font-semibold dark:text-white">
-              Sentra Rent Car
-            </span>
           </a>
           <p className="text-sm/7 mt-6">
-            Nikmati perjalanan tanpa ribet dengan layanan rental mobil yang
-            fleksibel, armada terawat, dan harga transparan. Cocok untuk
-            kebutuhan harian, perjalanan bisnis, hingga liburan keluarga.
+            Lembaga profesional terlengkap dan terdepan satu-satunya pengelola
+            jurnal terakreditasi yang menerbitkan 100 lebih artikel bereputasi
+            setiap tahunnya.
           </p>
         </div>
         <div className="flex w-full lg:justify-center">
@@ -61,13 +58,13 @@ const FooterLanding = () => {
                 </p>
               </div>
             </div>
-            <div className="inline-flex items-center gap-2">
+            <div className="inline-flex items-center gap-4">
               <FiMail className="text-white text-sm mt-1" />
               <p className="text-md font-semibold text-white">
                 example.email@agrinas.co.id
               </p>
             </div>
-            <div className="inline-flex items-center gap-2">
+            <div className="inline-flex items-center gap-4">
               <FiPhone className="text-white text-sm mt-1" />
               <p className="text-md font-semibold text-white">
                 +62 869948457879

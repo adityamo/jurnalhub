@@ -2,7 +2,7 @@
 
 import React, { ReactNode, useEffect, useState } from "react";
 import FooterLanding from "../footer";
-import NavbarLanding2 from "../navbar2";
+import NavbarLanding from "../navbar";
 
 type Props = {
   children: ReactNode;
@@ -19,7 +19,7 @@ export default function PublicLayout({ children }: Props) {
 
   return (
     <main className="flex-1 content" id="app-container">
-      <NavbarLanding2 />
+      <NavbarLanding />
       {children}
       <FooterLanding />
     </main>

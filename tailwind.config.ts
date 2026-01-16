@@ -13,7 +13,7 @@ const config: Config = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      satoshi: ["Satoshi", "sans-serif"],
+      PlusJakarta: ["Plus Jakarta Sans", "sans-serif"],
     },
     screens: {
       "2xsm": "375px",
@@ -28,7 +28,7 @@ const config: Config = {
         white: "#FFFFFF",
         black: {
           // ...colors.black,
-          DEFAULT: "#1C2434",
+          DEFAULT: "#37394F",
           2: "#010101",
         },
         red: {
@@ -39,7 +39,7 @@ const config: Config = {
         bodydark: "#AEB7C0",
         bodydark1: "#DEE4EE",
         bodydark2: "#8A99AF",
-        primary: "#3C50E0",
+        primary: "#1D4ED8",
         secondary: "#80CAEE",
         stroke: "#E2E8F0",
         gray: {
