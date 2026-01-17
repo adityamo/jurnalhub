@@ -18,7 +18,7 @@ const Bento3 = () => {
         <div className="absolute inset-x-0 bottom-[-30px] h-full px-4">
           <div className="relative w-full h-full overflow-hidden rounded-t-2xl">
             <Image
-              src="/assets/illustration/illus-3.svg"
+              src="/assets/illustration/Illus-3.svg"
               alt="Scopus Preview"
               fill
               className="object-cover"

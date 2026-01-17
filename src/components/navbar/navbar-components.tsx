@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/utils/utils";
 import Link from "next/link";
+import { FiX } from "react-icons/fi";
 
 export const Navbar = ({ children }: { children: ReactNode }) => (
   <nav className="sticky top-0 z-50 w-full bg-white/60 backdrop-blur-md">
@@ -29,19 +30,28 @@ export const NavBody = ({
 
 export const NavItems = ({
   items,
+  activeId,
 }: {
   items: { label: string; href: string }[];
+  activeId?: string;
 }) => (
   <div className="hidden md:flex gap-5 items-center">
-    {items.map((item) => (
-      <Link
-        key={item.href}
-        href={item.href}
-        className="text-sm font-medium text-gray-700 hover:text-black transition"
-      >
-        {item.label}
-      </Link>
-    ))}
+    {items.map((item) => {
+      const isActive = item.href === `#${activeId}`;
+
+      return (
+        <Link
+          key={item.href}
+          href={item.href}
+          className={cn(
+            "text-sm font-medium transition",
+            isActive ? "text-primary" : "text-gray-700 hover:text-black"
+          )}
+        >
+          {item.label}
+        </Link>
+      );
+    })}
   </div>
 );
 
@@ -90,7 +100,7 @@ export const MobileNavMenu = ({
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-md bg-gray-100 active:scale-90"
           >
-            ✕
+            <FiX></FiX>
           </button>
 
           <div className="flex flex-col items-center justify-center flex-1 gap-6 text-center">

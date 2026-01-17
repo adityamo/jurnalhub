@@ -11,7 +11,7 @@ import "react-toastify/ReactToastify.css";
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
-  keywords: ["Point Of Sale", "Pos", "Aplikasi Kasir"],
+  keywords: ["Posting Jurnal", "Jurnal Internasional", "Jasa Publish Jurnal"],
   icons: {
     icon: [
       {
@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: Props) {
       <head className=""></head>
       <body className={`${fontSans.className}`}>
         <NextTopLoader
-          color="#84cc16"
+          color="#1D4ED8"
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}

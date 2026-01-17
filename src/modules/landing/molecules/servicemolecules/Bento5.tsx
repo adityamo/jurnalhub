@@ -5,7 +5,7 @@ const Bento5 = () => {
     <div className="relative h-full min-h-[320px] rounded-2xl overflow-hidden">
       {/* BACKGROUND IMAGE */}
       <Image
-        src="/assets/illustration/illus-5.svg"
+        src="/assets/illustration/Illus-5.svg"
         alt="Diskusi Publikasi Jurnal"
         fill
         className="object-cover"

@@ -12,11 +12,19 @@ import {
 } from "./navbar-components";
 import { NavbarLogo, LanguageSwitcher, NavbarButton } from "./navbar-elements";
 import { siteConfig } from "@/config/site";
+import { useScrollSpy } from "@/hooks/useColorSpy";
 
 export default function NavbarLanding() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState("ID");
+
+  const activeId = useScrollSpy(
+    siteConfig.navItems.map((i) => i.href.replace("#", "")),
+    120
+  );
+
+  console.log("ini active id", activeId);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
@@ -33,11 +41,10 @@ export default function NavbarLanding() {
 
   return (
     <>
-      {/* NAVBAR HEADER */}
       <Navbar>
         <NavBody isScrolled={isScrolled}>
           <NavbarLogo />
-          <NavItems items={siteConfig.navItems} />
+          <NavItems items={siteConfig.navItems} activeId={activeId} />
           <div className="hidden md:flex gap-4 items-center">
             <LanguageSwitcher
               selectedLang={selectedLang}
@@ -57,8 +64,6 @@ export default function NavbarLanding() {
           </MobileNavHeader>
         </MobileNav>
       </Navbar>
-
-      {/* MOBILE MENU (WAJIB DI LUAR NAVBAR) */}
       <MobileNavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
         {siteConfig.navItems.map((item) => (
           <a

@@ -14,18 +14,17 @@ const Bento2 = () => {
           Scopus, DOAJ, atau basis data lain.
         </p>
       </div>
-      <div className="relative w-full min-h-[200px] lg:flex-1">
-        <div className="absolute inset-x-0 bottom-0 h-full px-4">
-          <div className="relative w-full h-full overflow-hidden rounded-t-2xl">
-            <Image
-              src="/assets/illustration/illus-2.svg"
-              alt="Scopus Preview"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
+
+      {/* 👇 INI KUNCINYA */}
+      <div className="mt-auto px-4">
+        <Image
+          src="/assets/illustration/Illus-2.svg"
+          alt="Scopus Preview"
+          width={220}
+          height={520}
+          className="mx-auto max-h-[260px] w-auto"
+          priority
+        />
       </div>
     </div>
   );
