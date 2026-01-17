@@ -5,6 +5,8 @@ import { ReactNode, useState } from "react";
 import { cn } from "@/utils/utils";
 import { FiChevronDown, FiGlobe } from "react-icons/fi";
 import { handleToContact } from "@/helpers/globalHelper";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
 interface LanguageSwitcherProps {
   selectedLang: string;
@@ -32,12 +34,14 @@ export const NavbarLogo = () => (
 );
 
 export const LanguageSwitcher = ({
-  selectedLang,
-  setSelectedLang,
   isMobile = false,
   className,
 }: LanguageSwitcherProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
 
   const languages: Language[] = [
     { code: "ID", label: "Indonesia" },
@@ -46,8 +50,29 @@ export const LanguageSwitcher = ({
     { code: "JA", label: "日本語" },
   ];
 
+  const LOCALE_MAP: Record<string, string> = {
+    ID: "id",
+    EN: "en",
+    ZH: "zh",
+    JA: "ja",
+  };
+  const selectedLang =
+    Object.keys(LOCALE_MAP).find((key) => LOCALE_MAP[key] === locale) ?? "ID";
+
   const handleSelect = (code: string) => {
-    setSelectedLang(code);
+    const nextLocale = LOCALE_MAP[code];
+    if (!nextLocale) return;
+
+    const segments = pathname.split("/").filter(Boolean);
+    const hasLocalePrefix = segments[0] === locale;
+
+    const nextPathname = hasLocalePrefix
+      ? `/${nextLocale}/${segments.slice(1).join("/")}`
+      : `/${nextLocale}${pathname}`;
+
+    router.push(
+      nextPathname === `/${nextLocale}/` ? `/${nextLocale}` : nextPathname
+    );
     setIsOpen(false);
   };
 
@@ -103,38 +128,24 @@ export const LanguageSwitcher = ({
     <div className={cn("relative", className)}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-2 py-2.5 border-1 border-r border-gray-300  bg-transparent hover:border-gray-400 transition-colors hover:shadow-sm"
-        aria-haspopup="listbox"
-        aria-expanded={isOpen}
+        className="flex items-center gap-2"
       >
-        <FiGlobe className="w-5 h-5 text-gray-600 flex-shrink-0" />
-        <span className="text-gray-700 font-medium text-sm">
-          {selectedLang}
-        </span>
+        <FiGlobe className="w-4 h-4" />
+        <span>{selectedLang}</span>
         <FiChevronDown
-          className={cn(
-            "w-4 h-4 text-gray-600 transition-transform",
-            isOpen && "rotate-180"
-          )}
+          className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")}
         />
       </button>
 
       {isOpen && (
-        <div
-          className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-[160px]"
-          role="listbox"
-        >
+        <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg z-50">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleSelect(lang.code)}
-              role="option"
-              aria-selected={selectedLang === lang.code}
               className={cn(
-                "w-full text-left px-4 py-2.5 hover:bg-blue-50 transition-colors text-sm",
-                selectedLang === lang.code
-                  ? "bg-blue-100 text-blue-600 font-medium"
-                  : "text-gray-700"
+                "block w-full text-left px-4 py-2 hover:bg-blue-50",
+                selectedLang === lang.code && "bg-blue-100 text-blue-600"
               )}
             >
               {lang.label}
