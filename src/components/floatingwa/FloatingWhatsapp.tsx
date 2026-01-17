@@ -1,12 +1,12 @@
 "use client";
 
+import { handleToContact } from "@/helpers/globalHelper";
 import Image from "next/image";
 
 export default function FloatingWhatsApp() {
   return (
-    <a
-      href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20publikasi%20jurnal"
-      target="_blank"
+    <button
+      onClick={handleToContact}
       rel="noopener noreferrer"
       className="
         fixed bottom-6 right-6 z-50
@@ -27,6 +27,6 @@ export default function FloatingWhatsApp() {
         height={60}
         priority
       />
-    </a>
+    </button>
   );
 }
