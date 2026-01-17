@@ -1,8 +1,9 @@
+import { handleToContact } from "@/helpers/globalHelper";
 import Image from "next/image";
 
 const Bento5 = () => {
   return (
-    <div className="relative h-full min-h-[320px] rounded-2xl overflow-hidden">
+    <div className="relative h-full min-h-[320px] rounded-2xl overflow-hidden hover:-translate-y-1.5 transition duration-300 hover:shadow-lg">
       {/* BACKGROUND IMAGE */}
       <Image
         src="/assets/illustration/Illus-5.svg"
@@ -21,7 +22,10 @@ const Bento5 = () => {
           Mulai Diskusi Publikasi Jurnal Anda
         </h3>
 
-        <button className="mt-4 inline-flex items-center gap-2 w-fit rounded-xl bg-white px-5 py-3 text-sm font-medium text-blue-700 hover:bg-blue-50 transition">
+        <button
+          onClick={handleToContact}
+          className="mt-4 inline-flex items-center gap-2 w-fit rounded-xl bg-white px-5 py-3 text-sm font-medium text-blue-700 hover:bg-blue-50 transition"
+        >
           Mulai Diskusi Sekarang
           <span className="text-lg">›</span>
         </button>

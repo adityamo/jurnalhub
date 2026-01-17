@@ -27,11 +27,11 @@ const ProductSection = () => {
                 </span>
               </div>
 
-              <h2 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal gap-2">
+              <h3 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal gap-2">
                 Produk
                 <span className="text-primary mx-2">Esklusif</span>
                 Dari Kami
-              </h2>
+              </h3>
             </div>
           </div>
         </ScrollReveal>

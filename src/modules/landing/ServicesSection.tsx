@@ -20,10 +20,10 @@ const ServicesSection = () => {
                 </span>
               </div>
 
-              <h2 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
+              <h3 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
                 <span className="text-primary"> Layanan Terbaik </span>
                 Dari Kami
-              </h2>
+              </h3>
             </div>
           </div>
         </ScrollReveal>

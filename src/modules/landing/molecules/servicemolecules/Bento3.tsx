@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Bento3 = () => {
   return (
-    <div className="relative h-full rounded-2xl bg-gray-50 flex flex-col overflow-hidden border border-gray-200">
+    <div className="relative h-full rounded-2xl bg-gray-50 flex flex-col overflow-hidden border border-gray-200 hover:-translate-y-1.5 transition duration-300 hover:shadow-lg">
       <div className="px-4 py-5 lg:px-6 lg:py-6">
         <h3 className="text-xl lg:text-2xl font-semibold text-slate-800">
           Editing, Proofreading, dan Pengecekan Kemiripan

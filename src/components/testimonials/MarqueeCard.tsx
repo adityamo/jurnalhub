@@ -29,7 +29,7 @@ export const MarqueeCards = ({
   }, [controls, reverse, speed]);
 
   return (
-    <div className="relative overflow-hidden w-full max-w-5xl mx-auto">
+    <div className="relative overflow-hidden w-full max-w-6xl mx-auto">
       {/* Gradient kiri */}
       <div className="absolute left-0 top-0 h-full w-20 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
 

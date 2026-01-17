@@ -1,10 +1,13 @@
 import { TMetaItem, TMetaResponse } from "@/entities/meta";
+import { siteConfig } from "@/config/site";
 
 export const handleToContact = () => {
-  window.open(
-    "https://wa.me/+6287888362186?text=Halo%20saya%20tertarik%20dengan%20layanan%20Anda",
-    "_blank"
-  );
+  const phone = siteConfig.whatsappNumber;
+  const message = encodeURIComponent(siteConfig.whatsappMessage);
+
+  const url = `https://wa.me/${phone}?text=${message}`;
+
+  window.open(url, "_blank", "noopener,noreferrer");
 };
 
 export const formatCurrency = (value: number | unknown): string =>

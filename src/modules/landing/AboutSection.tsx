@@ -5,7 +5,10 @@ import ScrollReveal from "@/components/motionreveal/ScrollReveal";
 
 const AboutSection = () => {
   return (
-    <section className="relative bg-primary justify-center mt-20" id="aboutus">
+    <section
+      className="relative bg-primary justify-center mt-5 lg:mt-10"
+      id="aboutus"
+    >
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
         <ScrollReveal effect="slide-up" delay={0.15}>
           <Image
@@ -26,9 +29,9 @@ const AboutSection = () => {
                 </span>
               </div>
 
-              <h2 className="text-white font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
+              <h3 className="text-white font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
                 Pendampingan yang Fokus pada Proses Akademik
-              </h2>
+              </h3>
             </div>
             <p className="text-xs lg:text-sm font-normal text-white mt-2">
               Proses publikasi jurnal sering kali membutuhkan waktu, ketelitian,

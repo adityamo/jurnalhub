@@ -14,7 +14,7 @@ type Props = {
 export default function PublicLayout({ children }: Props) {
   return (
     <PageTransition>
-      <main className="flex-1 content" id="app-container">
+      <main className="flex-1 content bg-white" id="app-container">
         <NavbarLanding />
         {children}
         <FloatingWhatsApp />

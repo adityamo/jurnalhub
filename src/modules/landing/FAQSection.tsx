@@ -11,8 +11,8 @@ const FAQSection = () => {
     setOpenQuestion((prev) => (prev === question ? null : question));
   };
   return (
-    <section className="relative justify-center mt-20" id="faq">
-      <Container>
+    <section className="relative justify-center bg-gray-50" id="faq">
+      <Container className="py-10">
         <div className="relative z-10 grid md:grid-cols-5 gap-10 mx-auto">
           <div className="md:col-span-2">
             <div className="space-y-5 text-start max-w-lg mb-5 lg:mb-8">
@@ -57,7 +57,8 @@ const FAQSection = () => {
                         handleToggle(item.question);
                       }}
                     >
-                      {item.question}
+                      <h3>{item.question}</h3>
+
                       {isOpen ? (
                         <FiChevronUp className="size-5 shrink-0 text-gray-600 dark:text-neutral-400" />
                       ) : (

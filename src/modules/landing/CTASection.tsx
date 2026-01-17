@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
+import { handleToContact } from "@/helpers/globalHelper";
+import { FiArrowRight } from "react-icons/fi";
 
 const CTASection = () => {
   return (
@@ -33,19 +35,34 @@ const CTASection = () => {
             </div>
 
             <div>
-              <div className="flex items-center gap-px text-orange-400 text-sm">
-                ★★★★★
+              <div className="inline-flex items-center gap-1 pt-2">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Image
+                    key={i}
+                    src="/assets/icon/starticon.svg"
+                    alt="star-icon"
+                    width={50}
+                    height={550}
+                    className="relative z-10 w-4"
+                  />
+                ))}
               </div>
               <p className="text-sm text-gray-100">Used by 10k+ Clients</p>
             </div>
           </div>
 
-          <h1 className="text-4xl max-w-2xl md:text-[46px] md:leading-[60px] font-semibold mt-5 bg-gradient-to-r from-white to-gray-50 text-transparent bg-clip-text">
+          <h3 className="text-4xl max-w-2xl md:text-[46px] md:leading-[60px] font-semibold mt-5 bg-gradient-to-r from-white to-gray-50 text-transparent bg-clip-text">
             Sudah Banyak yang Terbit, Sekarang Giliran Anda
-          </h1>
+          </h3>
 
-          <button className="px-12 py-2.5 text-black bg-white hover:bg-blue-50 transition-all rounded-full text-sm mt-6">
+          <button
+            onClick={handleToContact}
+            className="pr-1 pl-3 py-1 inline-flex items-center gap-2 text-black bg-white hover:bg-blue-100 hover:text-primary transition-all rounded-full text-sm mt-6"
+          >
             Konsultasi Sekarang
+            <span className="rounded-full bg-primary text-white h-8 w-8 flex items-center justify-center">
+              <FiArrowRight />
+            </span>
           </button>
         </div>
 
