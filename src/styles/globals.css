@@ -15,3 +15,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes heroBgFade {
+  to {
+    opacity: 1;
+  }
+}

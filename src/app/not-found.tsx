@@ -26,7 +26,7 @@ export default function NotFound() {
         <footer className="mt-auto text-center py-5">
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-sm text-gray-500 dark:text-neutral-500">
-              © All Rights Reserved. Focapos {currentYear}
+              © All Rights Reserved. Jurnal Hub {currentYear}
             </p>
           </div>
         </footer>

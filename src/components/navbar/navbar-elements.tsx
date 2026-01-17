@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ReactNode, useState } from "react";
 import { cn } from "@/utils/utils";
 import { FiChevronDown, FiGlobe } from "react-icons/fi";
+import { handleToContact } from "@/helpers/globalHelper";
 
 interface LanguageSwitcherProps {
   selectedLang: string;
@@ -159,6 +160,7 @@ export const NavbarButton = ({
       "hover:shadow-lg active:scale-95 transition",
       className
     )}
+    onClick={handleToContact}
   >
     {children}
   </button>

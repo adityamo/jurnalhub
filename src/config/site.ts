@@ -6,6 +6,9 @@ export const siteConfig = {
   ogImage: "https://nextui.org/twitter-cards/nextui.jpeg",
   author: "aditya septama",
   email: "rfadityahalim18@gmail.com",
+  whatsappNumber: "62897478837884",
+  whatsappMessage:
+    "Hai saya membutuhkan bantuan untuk jasa publish karya ilmiah",
   siteUrl: "https://nextui.org",
   creator: "@adityamo",
   openGraph: {
