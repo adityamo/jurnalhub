@@ -44,7 +44,7 @@ export const siteConfig = {
     { label: "Tentang Kami  ", href: "#aboutus", haveChild: false },
     { label: "Layanan", href: "#services", haveChild: false },
     { label: "Produk", href: "#product", haveChild: false },
-    { label: "Testimoni", href: "#testimoni", haveChild: false },
-    { label: "FAQ", href: "#testimoni", haveChild: false },
+    { label: "Testimoni", href: "#testimonials", haveChild: false },
+    { label: "FAQ", href: "#faq", haveChild: false },
   ],
 };

@@ -1,27 +1,25 @@
 "use client";
 
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import FooterLanding from "../footer";
-import NavbarLanding2 from "../navbar2";
+import NavbarLanding from "../navbar";
+import FloatingWhatsApp from "../floatingwa/FloatingWhatsapp";
+
+import PageTransition from "../pageloader/PageTransition";
 
 type Props = {
   children: ReactNode;
 };
 
 export default function PublicLayout({ children }: Props) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
-    <main className="flex-1 content" id="app-container">
-      <NavbarLanding2 />
-      {children}
-      <FooterLanding />
-    </main>
+    <PageTransition>
+      <main className="flex-1 content" id="app-container">
+        <NavbarLanding />
+        {children}
+        <FloatingWhatsApp />
+        <FooterLanding />
+      </main>
+    </PageTransition>
   );
 }

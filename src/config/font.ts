@@ -1,8 +1,8 @@
-import { Poppins } from "next/font/google";
+import { Plus_Jakarta_Sans as PlusJakarta } from "next/font/google";
 
-export const fontSans = Poppins({
+export const fontSans = PlusJakarta({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });

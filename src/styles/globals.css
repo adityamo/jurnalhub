@@ -11,3 +11,7 @@
   background-color: #e5e7eb; /* Track color */
   border-radius: 9999px; /* Fully rounded */
 }
+
+html {
+  scroll-behavior: smooth;
+}

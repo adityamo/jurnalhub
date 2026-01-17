@@ -1,14 +1,25 @@
+"use client";
 import React from "react";
-import HeroLanding from "./hero";
-import BannerExample from "./bannerexample";
-import Subscribe from "./subscribe";
+import HeroSection from "./HeroSection";
+import AboutSection from "./AboutSection";
+import ServicesSection from "./ServicesSection";
+import ProductSection from "./ProductSection";
+import ProPersonSection from "./ProPersonSection";
+import FAQSection from "./FAQSection";
+import CTASection from "./CTASection";
+import TestimonialsSection from "./TestimonialsSection";
 
-export default async function LandingModule() {
+export default function LandingModule() {
   return (
     <>
-      <HeroLanding />
-      <BannerExample />
-      <Subscribe />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <ProductSection />
+      <ProPersonSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <CTASection />
     </>
   );
 }
