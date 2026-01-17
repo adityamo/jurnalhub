@@ -12,7 +12,6 @@ import { FiArrowRight } from "react-icons/fi";
 const HeroSection = () => {
   return (
     <section className="relative w-full overflow-hidden" id="hero">
-      {/* ===== BACKGROUND (DELAYED FADE, GPU LIGHT) ===== */}
       <div
         aria-hidden
         className="
@@ -45,7 +44,6 @@ const HeroSection = () => {
 
       <Container className="relative py-10 lg:py-16 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          {/* ================= LEFT ================= */}
           <div className="flex flex-col gap-3">
             <div className="flex w-full justify-center lg:justify-start">
               <ScrollReveal effect="slide-up" delay={0.05}>
@@ -56,8 +54,8 @@ const HeroSection = () => {
                     width={20}
                     height={20}
                     className="relative z-10 w-5"
-                    loading="lazy" // OPTIMIZED
-                    decoding="async" // OPTIMIZED
+                    loading="lazy"
+                    decoding="async"
                   />
                   Trusted Publisher
                 </div>
@@ -95,21 +93,53 @@ const HeroSection = () => {
                 </button>
               </div>
 
-              {/* ===== SOCIAL PROOF ===== */}
               <div className="flex items-center gap-3 lg:mt-10 mt-5">
                 <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
+                  <div className="hs-tooltip inline-block">
                     <Image
-                      key={i}
-                      src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?auto=format&fit=facearea&w=100&h=100&q=80"
+                      className="hs-tooltip-toggle relative inline-block size-11 rounded-full ring-2 ring-white hover:z-10 dark:ring-neutral-900"
+                      src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
                       alt="Avatar"
                       width={44}
                       height={44}
-                      loading="lazy" // OPTIMIZED
-                      decoding="async" // OPTIMIZED
-                      className="rounded-full ring-2 ring-white"
                     />
-                  ))}
+                    <span
+                      className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 inline-block absolute invisible z-20 py-1.5 px-2.5 bg-gray-900 text-xs text-white rounded-lg dark:bg-neutral-700"
+                      role="tooltip"
+                    >
+                      James
+                    </span>
+                  </div>
+                  <div className="hs-tooltip inline-block">
+                    <Image
+                      className="hs-tooltip-toggle relative inline-block size-11 rounded-full ring-2 ring-white hover:z-10 dark:ring-neutral-900"
+                      src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                      alt="Avatar"
+                      width={44}
+                      height={44}
+                    />
+                    <span
+                      className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 inline-block absolute invisible z-20 py-1.5 px-2.5 bg-gray-900 text-xs text-white rounded-lg dark:bg-neutral-700"
+                      role="tooltip"
+                    >
+                      Maria
+                    </span>
+                  </div>
+                  <div className="hs-tooltip inline-block">
+                    <Image
+                      className="hs-tooltip-toggle relative inline-block size-11 rounded-full ring-2 ring-white hover:z-10 dark:ring-neutral-900"
+                      src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80"
+                      alt="Avatar"
+                      width={44}
+                      height={44}
+                    />
+                    <span
+                      className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 inline-block absolute invisible z-20 py-1.5 px-2.5 bg-gray-900 text-xs text-white rounded-lg dark:bg-neutral-700"
+                      role="tooltip"
+                    >
+                      Anna
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex flex-col space-y-1">
@@ -121,8 +151,8 @@ const HeroSection = () => {
                         alt="star-icon"
                         width={16}
                         height={16}
-                        loading="lazy" // OPTIMIZED
-                        decoding="async" // OPTIMIZED
+                        loading="lazy"
+                        decoding="async"
                         className="w-4"
                       />
                     ))}
@@ -136,7 +166,6 @@ const HeroSection = () => {
             </ScrollReveal>
           </div>
 
-          {/* ================= RIGHT ================= */}
           <div className="relative flex justify-center lg:justify-end">
             <ScrollReveal effect="slide-up" delay={0.25}>
               <Image
