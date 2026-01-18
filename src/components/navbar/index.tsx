@@ -29,8 +29,17 @@ export default function NavbarLanding() {
   );
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
+    let last = false;
+
+    const onScroll = () => {
+      const next = window.scrollY > 10;
+      if (next !== last) {
+        last = next;
+        setIsScrolled(next);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -43,7 +52,7 @@ export default function NavbarLanding() {
 
   return (
     <>
-      <Navbar>
+      <Navbar isScrolled={isScrolled}>
         <NavBody isScrolled={isScrolled}>
           <NavbarLogo />
           <NavItems items={siteConfig.navItems} activeId={activeId} />

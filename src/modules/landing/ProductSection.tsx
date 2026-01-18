@@ -19,9 +19,12 @@ const ProductSection = () => {
   const t = useTranslations("Product");
 
   return (
-    <section className="relative justify-center bg-gray-100 mt-20" id="product">
-      <Container className="grid grid-cols-1  gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
-        <ScrollReveal effect="slide-up" delay={0.15}>
+    <ScrollReveal effect="slide-up" delay={0.05}>
+      <section
+        className="relative justify-center bg-gray-100 mt-20"
+        id="product"
+      >
+        <Container className="grid grid-cols-1  gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
           <div className="flex w-full justify-center">
             <div className="space-y-5 text-center max-w-lg mb-5 lg:mb-2">
               <div>
@@ -39,12 +42,11 @@ const ProductSection = () => {
               </h3>
             </div>
           </div>
-        </ScrollReveal>
-        <ScrollReveal effect="slide-down" delay={0.15}>
+
           <InfiniteCarousel4Col items={products} />
-        </ScrollReveal>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </ScrollReveal>
   );
 };
 

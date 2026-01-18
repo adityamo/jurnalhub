@@ -8,12 +8,12 @@ const AboutSection = () => {
   const t = useTranslations("About");
 
   return (
-    <section
-      className="relative bg-primary justify-center mt-5 lg:mt-10"
-      id="aboutus"
-    >
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
-        <ScrollReveal effect="slide-up" delay={0.15}>
+    <ScrollReveal effect="slide-up" delay={0.05}>
+      <section
+        className="relative bg-primary justify-center mt-5 lg:mt-10"
+        id="aboutus"
+      >
+        <Container className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
           <Image
             src="/assets/illustration/about-1.svg"
             alt="Hero Person"
@@ -22,8 +22,7 @@ const AboutSection = () => {
             className="relative z-10 lg:w-[600px]"
             priority
           />
-        </ScrollReveal>
-        <ScrollReveal effect="slide-up" delay={0.15}>
+
           <div className="flex flex-col">
             <div className="space-y-5">
               <div>
@@ -40,9 +39,9 @@ const AboutSection = () => {
               {t("description")}
             </p>
           </div>
-        </ScrollReveal>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </ScrollReveal>
   );
 };
 

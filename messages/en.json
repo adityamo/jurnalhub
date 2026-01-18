@@ -34,6 +34,17 @@
       "line2": "By Us"
     }
   },
+  "Services": {
+    "badge": "Services",
+    "title": {
+      "line2": "of Us",
+      "highlight": "Best Services"
+    },
+    "bento1": {
+      "title": "",
+      "subtitle": ""
+    }
+  },
   "CTA": {
     "socialProof": "Used by 10k+ Clients",
     "title": "Many Have Published, Now It’s Your Turn",
