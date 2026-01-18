@@ -4,7 +4,13 @@ import { FiCheck } from "react-icons/fi";
 
 const Bento1 = () => {
   return (
-    <div className="relative h-full overflow-hidden rounded-2xl bg-gray-50 border border-gray-200 hover:-translate-y-1.5 transition duration-300 hover:shadow-lg">
+    <div
+      className=" relative h-full overflow-hidden rounded-2xl
+        bg-gray-50 border border-gray-200
+        transform-gpu will-change-transform
+        transition-shadow duration-300 ease-out
+        hover:-translate-y-1.5 hover:shadow-lg"
+    >
       <div className="grid grid-cols-1  gap-8 px-3 py-4 lg:px-5 lg:py-4">
         <div className="z-10 lg:max-w-md">
           <h2 className="text-xl lg:text-2xl font-semibold text-slate-800">
@@ -55,8 +61,7 @@ const Bento1 = () => {
           alt="Hero Person"
           width={220}
           height={520}
-          className="w-full"
-          priority
+          className="w-full select-none"
         />
       </div>
     </div>

@@ -15,7 +15,6 @@ const Bento2 = () => {
         </p>
       </div>
 
-      {/* 👇 INI KUNCINYA */}
       <div className="mt-auto px-4">
         <Image
           src="/assets/illustration/Illus-2.svg"
@@ -23,7 +22,6 @@ const Bento2 = () => {
           width={220}
           height={520}
           className="mx-auto max-h-[260px] w-auto"
-          priority
         />
       </div>
     </div>

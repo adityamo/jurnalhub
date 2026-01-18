@@ -1,61 +1,70 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { SocialMediaCard } from "./SocialMediaCard";
 
 type MarqueeCardsProps = {
   data: any[];
   reverse?: boolean;
-  speed?: number;
+  speed?: number; // px per second
 };
 
 export const MarqueeCards = ({
   data,
   reverse = false,
-  speed = 25,
+  speed = 40,
 }: MarqueeCardsProps) => {
-  const controls = useAnimation();
+  const x = useMotionValue(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const contentWidth = useRef(0);
 
   useEffect(() => {
-    controls.start({
-      x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
-      transition: {
-        duration: speed,
-        ease: "linear",
-        repeat: Infinity,
-      },
-    });
-  }, [controls, reverse, speed]);
+    if (!trackRef.current) return;
+
+    contentWidth.current = trackRef.current.scrollWidth / 2;
+
+    x.set(reverse ? -contentWidth.current : 0);
+  }, [data, reverse]);
+
+  useAnimationFrame((_, delta) => {
+    const move = (speed * delta) / 1000;
+
+    const currentX = x.get();
+
+    if (!reverse) {
+      x.set(currentX - move);
+
+      if (currentX <= -contentWidth.current) {
+        x.set(0);
+      }
+    } else {
+      x.set(currentX + move);
+
+      if (currentX >= 0) {
+        x.set(-contentWidth.current);
+      }
+    }
+  });
 
   return (
-    <div className="relative overflow-hidden w-full mx-auto">
-      {/* Gradient kiri */}
+    <div className="relative overflow-hidden w-full">
       <div className="absolute left-0 top-0 h-full w-20 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
 
       <motion.div
-        className="flex min-w-[200%] py-10"
-        animate={controls}
+        ref={trackRef}
+        className="flex w-max py-10"
+        style={{ x, touchAction: "pan-x" }}
         drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        onHoverStart={() => controls.stop()}
-        onHoverEnd={() => {
-          controls.start({
-            x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
-            transition: {
-              duration: speed,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          });
-        }}
+        dragElastic={0.06}
+        dragMomentum={false}
       >
-        {[...data, ...data].map((card, index) => (
-          <SocialMediaCard key={index} {...card} />
+        {[...data, ...data].map((card, i) => (
+          <SocialMediaCard key={i} {...card} />
         ))}
       </motion.div>
 
-      {/* Gradient kanan */}
       <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
     </div>
   );
