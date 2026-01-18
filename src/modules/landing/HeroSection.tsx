@@ -74,7 +74,7 @@ const HeroSection = () => {
                 </div>
               </AnimatedTextWrapper>
 
-              <p className="text-gray-600 max-w-xl leading-relaxed text-center lg:text-start">
+              <p className="text-gray-600 max-w-2xl leading-relaxed text-center lg:text-start">
                 {t("description")}
               </p>
 
