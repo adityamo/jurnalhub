@@ -17,9 +17,9 @@ interface Props {
   interval?: number;
 }
 
-const ITEMS_PER_PAGE = 4;
 const CARD_WIDTH = 260;
 const GAP = 24;
+const STEP = CARD_WIDTH + GAP;
 
 export default function InfiniteCarousel4Col({
   items,
@@ -27,34 +27,72 @@ export default function InfiniteCarousel4Col({
 }: Props) {
   const controls = useAnimation();
   const [index, setIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
   const isAnimating = useRef(false);
+  const isPaused = useRef(false);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const duplicatedItems = [...items, ...items];
-  const step = CARD_WIDTH + GAP;
 
+  /* =======================
+     RESPONSIVE BREAKPOINT
+  ======================== */
   useEffect(() => {
-    const timer = setInterval(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 4);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  /* =======================
+     RESET ON BREAKPOINT CHANGE
+  ======================== */
+  useEffect(() => {
+    controls.set({ x: 0 });
+    setIndex(0);
+  }, [itemsPerPage]);
+
+  /* =======================
+     AUTOPLAY
+  ======================== */
+  useEffect(() => {
+    if (isPaused.current) return;
+
+    autoplayRef.current = setInterval(() => {
       next();
     }, interval);
 
-    return () => clearInterval(timer);
-  }, [index]);
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, [index, itemsPerPage]);
 
+  /* =======================
+     LOOP HANDLER
+  ======================== */
   useEffect(() => {
     if (index >= items.length) {
       controls.set({ x: 0 });
       setIndex(0);
     }
-  }, [index, items.length, controls]);
+  }, [index]);
 
+  /* =======================
+     ACTIONS
+  ======================== */
   const next = async () => {
     if (isAnimating.current) return;
     isAnimating.current = true;
 
-    const nextIndex = index + ITEMS_PER_PAGE;
+    const nextIndex = index + itemsPerPage;
 
     await controls.start({
-      x: -nextIndex * step,
+      x: -nextIndex * STEP,
       transition: { duration: 0.45, ease: "easeInOut" },
     });
 
@@ -67,10 +105,10 @@ export default function InfiniteCarousel4Col({
     isAnimating.current = true;
 
     const prevIndex =
-      index === 0 ? items.length - ITEMS_PER_PAGE : index - ITEMS_PER_PAGE;
+      index === 0 ? items.length - itemsPerPage : index - itemsPerPage;
 
     await controls.start({
-      x: -prevIndex * step,
+      x: -prevIndex * STEP,
       transition: { duration: 0.45, ease: "easeInOut" },
     });
 
@@ -78,24 +116,32 @@ export default function InfiniteCarousel4Col({
     isAnimating.current = false;
   };
 
+  /* =======================
+     RENDER
+  ======================== */
   return (
     <div
       className="relative w-full overflow-hidden"
-      onMouseEnter={() => controls.stop()}
+      onMouseEnter={() => (isPaused.current = true)}
+      onMouseLeave={() => (isPaused.current = false)}
     >
       <motion.div
         animate={controls}
         drag="x"
         dragElastic={0.08}
         dragConstraints={{ left: -100000, right: 0 }}
+        onDragStart={() => (isPaused.current = true)}
         onDragEnd={(e, info) => {
-          if (info.offset.x < -80) next();
-          if (info.offset.x > 80) prev();
+          isPaused.current = false;
+
+          // Velocity based swipe (mobile friendly)
+          if (info.velocity.x < -500 || info.offset.x < -80) next();
+          if (info.velocity.x > 500 || info.offset.x > 80) prev();
         }}
         className="flex gap-6 w-max cursor-grab active:cursor-grabbing"
       >
-        {duplicatedItems.map((item, index) => (
-          <div key={`${item.id}-${index}`} className="w-[260px] shrink-0">
+        {duplicatedItems.map((item, i) => (
+          <div key={`${item.id}-${i}`} className="w-[260px] shrink-0">
             <div className="shadow-md rounded-xl overflow-hidden">
               <div className="relative aspect-[3/4]">
                 <Image
@@ -110,19 +156,18 @@ export default function InfiniteCarousel4Col({
         ))}
       </motion.div>
 
+      {/* DESKTOP NAV */}
       <div className="hidden lg:block">
         <button
           onClick={prev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary text-white shadow rounded-full flex items-center justify-center hover:bg-gray-100"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary text-white shadow rounded-full flex items-center justify-center hover:bg-blue-600"
         >
           <FiChevronLeft />
         </button>
-      </div>
 
-      <div className="hidden lg:block">
         <button
           onClick={next}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary text-white shadow rounded-full flex items-center justify-center hover:bg-gray-100"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary text-white shadow rounded-full flex items-center justify-center hover:bg-blue-600"
         >
           <FiChevronRight />
         </button>

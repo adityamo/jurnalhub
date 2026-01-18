@@ -1,6 +1,74 @@
 {
+  "Navigation": {
+    "Home": "Beranda",
+    "AboutUs": "Tentang Kami",
+    "Services": "Layanan",
+    "Product": "Produk",
+    "Testimonials": "Testimoni",
+    "FAQ": "FAQ"
+  },
+  "ButtonHeader": "Konsultasi Sekarang",
   "Hero": {
-    "title": "Publikasi Jurnal Tanpa Ribet",
-    "subtitle": "Lebih Terarah"
+    "badge": "Penerbit Terpercaya",
+    "title": {
+      "line1": "Publikasi Jurnal Tanpa Ribet dan",
+      "highlight": "Lebih Terarah"
+    },
+    "description": "Ingin naskah Anda siap diajukan ke jurnal SINTA, Scopus, DOAJ, atau EBSCO dengan lebih percaya diri? Kami mendampingi proses dari A–Z: pemilihan jurnal, perapihan artikel, editing & proofreading, hingga pendampingan revisi bersama reviewer.",
+    "cta": "Publish Sekarang",
+    "rating": {
+      "score": "4.8",
+      "label": "Kepercayaan Penulis"
+    }
+  },
+  "About": {
+    "badge": "Tentang Kami",
+    "title": "Pendampingan yang Fokus pada Proses Akademik",
+    "description": "Proses publikasi jurnal sering kali membutuhkan waktu, ketelitian, dan pemahaman terhadap standar masing-masing jurnal. Di sinilah kami berperan sebagai pendamping, membantu Anda memahami alur publikasi mulai dari penyesuaian naskah, pemilihan jurnal, hingga proses submit dan revisi."
+  },
+  "Product": {
+    "badge": "Produk Kami",
+    "title": {
+      "line1": "Produk",
+      "highlight": "Esklusif",
+      "line2": "Dari Kami"
+    }
+  },
+  "CTA": {
+    "socialProof": "Digunakan oleh 10k+ Klien",
+    "title": "Sudah Banyak yang Terbit, Sekarang Giliran Anda",
+    "button": "Konsultasi Sekarang"
+  },
+  "FAQ": {
+    "badge": "FAQ",
+    "title": {
+      "line1": "Pertanyaan dan",
+      "highlight": "Jawaban",
+      "line2": "yang Sering Ditanyakan"
+    },
+    "contactLabel": "Ada Pertanyaan Lain?",
+    "contactEmail": "hello.cs@sentra.com",
+    "items": [
+      {
+        "question": "Apa itu layanan jasa publikasi jurnal?",
+        "answer": "Layanan jasa publikasi jurnal adalah pendampingan profesional untuk membantu penulis mempersiapkan, menyempurnakan, hingga mempublikasikan artikel ilmiah ke jurnal nasional maupun internasional sesuai standar yang berlaku."
+      },
+      {
+        "question": "Jurnal apa saja yang dapat dibantu dalam proses publikasi?",
+        "answer": "Kami membantu publikasi ke jurnal nasional terakreditasi (SINTA) serta jurnal internasional yang terindeks Scopus, DOAJ, EBSCO, dan basis data ilmiah lainnya."
+      },
+      {
+        "question": "Apakah layanan ini menjamin artikel pasti diterima?",
+        "answer": "Kami tidak dapat menjamin penerimaan artikel karena keputusan akhir sepenuhnya berada di pihak editor dan reviewer jurnal."
+      },
+      {
+        "question": "Layanan apa saja yang tersedia dalam jasa publikasi ini?",
+        "answer": "Layanan meliputi pemilihan jurnal, pengecekan scope, editing & proofreading, pengecekan similaritas, pendampingan submit, dan revisi."
+      },
+      {
+        "question": "Apakah saya bisa berkonsultasi sebelum menggunakan layanan?",
+        "answer": "Ya, kami menyediakan sesi konsultasi awal sebelum proses pendampingan dimulai."
+      }
+    ]
   }
 }

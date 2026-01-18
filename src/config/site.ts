@@ -44,10 +44,10 @@ export const siteConfig = {
   },
   navItems: [
     { label: "Home", href: "/", haveChild: false },
-    { label: "Tentang Kami  ", href: "#aboutus", haveChild: false },
-    { label: "Layanan", href: "#services", haveChild: false },
-    { label: "Produk", href: "#product", haveChild: false },
-    { label: "Testimoni", href: "#testimonials", haveChild: false },
+    { label: "AboutUs", href: "#aboutus", haveChild: false },
+    { label: "Services", href: "#services", haveChild: false },
+    { label: "Product", href: "#product", haveChild: false },
+    { label: "Testimonials", href: "#testimonials", haveChild: false },
     { label: "FAQ", href: "#faq", haveChild: false },
   ],
 };

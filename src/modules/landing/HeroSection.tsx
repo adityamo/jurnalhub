@@ -5,11 +5,13 @@ import Container from "@/components/container";
 import ScrollReveal from "@/components/motionreveal/ScrollReveal";
 import AnimatedTextWrapper from "@/components/textgenerate/AnimatedTextWrapper";
 import { handleToContact } from "@/helpers/globalHelper";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
 
 const HeroSection = () => {
+  const t = useTranslations("Hero");
   return (
     <section className="relative w-full overflow-hidden" id="hero">
       <div
@@ -57,7 +59,7 @@ const HeroSection = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  Trusted Publisher
+                  {t("badge")}
                 </div>
               </ScrollReveal>
             </div>
@@ -65,18 +67,17 @@ const HeroSection = () => {
             <AnimatedTextWrapper>
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center lg:text-start leading-tight md:leading-snug lg:leading-normal text-black">
-                  Publikasi Jurnal Tanpa Ribet dan
-                  <span className="ms-2 text-blue-600">Lebih Terarah</span>
+                  {t("title.line1")}
+                  <span className="ms-2 text-blue-600">
+                    {t("title.highlight")}
+                  </span>
                 </h2>
               </div>
             </AnimatedTextWrapper>
 
             <ScrollReveal effect="slide-up" delay={0.15}>
               <p className="text-gray-600 max-w-xl leading-relaxed text-center lg:text-start">
-                Ingin naskah Anda siap diajukan ke jurnal SINTA, Scopus, DOAJ,
-                atau EBSCO dengan lebih percaya diri? Kami mendampingi proses
-                dari A–Z: pemilihan jurnal, perapihan artikel, editing &
-                proofreading, hingga pendampingan revisi bersama reviewer.
+                {t("description")}
               </p>
 
               <div className="flex items-center justify-center lg:justify-start gap-4 mt-4">
@@ -89,7 +90,7 @@ const HeroSection = () => {
                     will-change-transform   // OPTIMIZED
                   "
                 >
-                  Publish Sekarang <FiArrowRight />
+                  {t("cta")} <FiArrowRight />
                 </button>
               </div>
 
@@ -158,8 +159,10 @@ const HeroSection = () => {
                     ))}
                   </div>
                   <div className="text-sm text-gray-600">
-                    <span className="font-semibold text-gray-800">4.8</span> •
-                    Kepercayaan & Penulis
+                    <span className="font-semibold text-gray-800">
+                      {t("rating.score")}
+                    </span>{" "}
+                    •{t("rating.label")}
                   </div>
                 </div>
               </div>

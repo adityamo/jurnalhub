@@ -3,8 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { handleToContact } from "@/helpers/globalHelper";
 import { FiArrowRight } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 const CTASection = () => {
+  const t = useTranslations("CTA");
+
   return (
     <section className="py-10 lg:py-20" id="cta">
       <div className="relative max-w-6xl py-16 md:pl-10 md:w-full mx-2 md:mx-auto bg-gradient-to-r from-blue-700 to-blue-500 rounded-2xl p-10 text-white overflow-hidden">
@@ -47,19 +50,19 @@ const CTASection = () => {
                   />
                 ))}
               </div>
-              <p className="text-sm text-gray-100">Used by 10k+ Clients</p>
+              <p className="text-sm text-gray-100">{t("socialProof")}</p>
             </div>
           </div>
 
           <h3 className="text-4xl max-w-2xl md:text-[46px] md:leading-[60px] font-semibold mt-5 bg-gradient-to-r from-white to-gray-50 text-transparent bg-clip-text">
-            Sudah Banyak yang Terbit, Sekarang Giliran Anda
+            {t("title")}
           </h3>
 
           <button
             onClick={handleToContact}
             className="pr-1 pl-3 py-1 inline-flex items-center gap-2 text-black bg-white hover:bg-blue-100 hover:text-primary transition-all rounded-full text-sm mt-6"
           >
-            Konsultasi Sekarang
+            {t("button")}
             <span className="rounded-full bg-primary text-white h-8 w-8 flex items-center justify-center">
               <FiArrowRight />
             </span>

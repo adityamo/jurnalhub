@@ -13,18 +13,20 @@ import {
 import { NavbarLogo, LanguageSwitcher, NavbarButton } from "./navbar-elements";
 import { siteConfig } from "@/config/site";
 import { useScrollSpy } from "@/hooks/useColorSpy";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function NavbarLanding() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState("ID");
+  const tNav = useTranslations("Navigation");
+  const tBtn = useTranslations();
 
   const activeId = useScrollSpy(
     siteConfig.navItems.map((i) => i.href.replace("#", "")),
     120
   );
-
-  console.log("ini active id", activeId);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
@@ -50,7 +52,7 @@ export default function NavbarLanding() {
               selectedLang={selectedLang}
               setSelectedLang={setSelectedLang}
             />
-            <NavbarButton>Konsultasi Sekarang</NavbarButton>
+            <NavbarButton>{tBtn("ButtonHeader")}</NavbarButton>
           </div>
         </NavBody>
 
@@ -65,16 +67,18 @@ export default function NavbarLanding() {
         </MobileNav>
       </Navbar>
       <MobileNavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
-        {siteConfig.navItems.map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            onClick={() => setIsMenuOpen(false)}
-            className="text-lg font-medium"
-          >
-            {item.label}
-          </a>
-        ))}
+        {siteConfig.navItems.map((item) => {
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-lg font-medium"
+            >
+              {tNav(`${item.label}`)}
+            </Link>
+          );
+        })}
 
         <LanguageSwitcher
           isMobile
@@ -82,7 +86,7 @@ export default function NavbarLanding() {
           setSelectedLang={setSelectedLang}
         />
 
-        <NavbarButton className="w-48">Konsultasi Sekarang</NavbarButton>
+        <NavbarButton className="w-48">{tBtn("ButtonHeader")}</NavbarButton>
       </MobileNavMenu>
     </>
   );
