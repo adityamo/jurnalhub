@@ -2,8 +2,11 @@ import React from "react";
 import Container from "@/components/container";
 import Image from "next/image";
 import ScrollReveal from "@/components/motionreveal/ScrollReveal";
+import { useTranslations } from "next-intl";
 
 const AboutSection = () => {
+  const t = useTranslations("About");
+
   return (
     <section
       className="relative bg-primary justify-center mt-5 lg:mt-10"
@@ -25,20 +28,16 @@ const AboutSection = () => {
             <div className="space-y-5">
               <div>
                 <span className="px-4 py-2.5 bg-white rounded-full text-primary font-normal text-sm lg:text-md">
-                  Tentang Kami
+                  {t("badge")}
                 </span>
               </div>
 
               <h3 className="text-white font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
-                Pendampingan yang Fokus pada Proses Akademik
+                {t("title")}
               </h3>
             </div>
             <p className="text-xs lg:text-sm font-normal text-white mt-2">
-              Proses publikasi jurnal sering kali membutuhkan waktu, ketelitian,
-              dan pemahaman terhadap standar masing-masing jurnal.Di sinilah
-              kami berperan sebagai pendamping, membantu Anda memahami alur
-              publikasi mulai dari penyesuaian naskah, pemilihan jurnal, hingga
-              proses submit dan revisi.
+              {t("description")}
             </p>
           </div>
         </ScrollReveal>

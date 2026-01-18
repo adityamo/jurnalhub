@@ -1,6 +1,7 @@
 import InfiniteCarousel4Col from "@/components/carousel/InfiniteCarousel4Col";
 import Container from "@/components/container";
 import ScrollReveal from "@/components/motionreveal/ScrollReveal";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const ProductSection = () => {
@@ -15,6 +16,8 @@ const ProductSection = () => {
     { id: 4, image: "/assets/product/product-4.png", title: "SINTA" },
   ];
 
+  const t = useTranslations("Product");
+
   return (
     <section className="relative justify-center bg-gray-100 mt-20" id="product">
       <Container className="grid grid-cols-1  gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
@@ -23,14 +26,16 @@ const ProductSection = () => {
             <div className="space-y-5 text-center max-w-lg mb-5 lg:mb-2">
               <div>
                 <span className="px-4 py-2.5 bg-white border border-gray-200 rounded-full text-primary font-normal text-sm lg:text-md">
-                  Produk Kami
+                  {t("badge")}
                 </span>
               </div>
 
               <h3 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal gap-2">
-                Produk
-                <span className="text-primary mx-2">Esklusif</span>
-                Dari Kami
+                {t("title.line1")}
+                <span className="text-primary mx-2">
+                  {t("title.highlight")}
+                </span>
+                {t("title.line2")}
               </h3>
             </div>
           </div>

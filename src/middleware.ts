@@ -2,13 +2,9 @@ import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 import createIntlMiddleware from "next-intl/middleware";
-import { locales, defaultLocale } from "@/config/i18n";
+import { routing } from "./i18n/routing";
 
-const intlMiddleware = createIntlMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: "as-needed",
-});
+const intlMiddleware = createIntlMiddleware(routing);
 
 export default withAuth(
   async function middleware(req) {
