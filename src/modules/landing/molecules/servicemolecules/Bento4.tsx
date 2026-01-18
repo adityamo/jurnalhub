@@ -22,7 +22,6 @@ const Bento4 = () => {
               alt="Scopus Preview"
               fill
               className="object-cover"
-              priority
             />
           </div>
         </div>

@@ -15,7 +15,8 @@ export const Navbar = ({
 }) => (
   <nav
     className={cn(
-      "sticky top-0 z-50 w-full transition-colors",
+      "sticky top-0 z-50 w-full",
+      "transition-[background-color] duration-300",
       isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
     )}
   >

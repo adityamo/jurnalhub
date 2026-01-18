@@ -12,7 +12,7 @@ const CTASection = () => {
   return (
     <section className="py-10 lg:py-20" id="cta">
       <Container>
-        <div className="relative py-16 md:w-full mx-2 md:mx-auto bg-gradient-to-r from-blue-700 to-blue-500 rounded-2xl p-10 text-white overflow-hidden">
+        <div className="relative py-8 lg:py-16 md:w-full mx-2 md:mx-auto bg-gradient-to-r from-blue-700 to-blue-500 rounded-2xl p-10 text-white overflow-hidden">
           <div className="relative z-10 flex flex-col items-start justify-center text-left max-w-2xl">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
@@ -56,7 +56,7 @@ const CTASection = () => {
               </div>
             </div>
 
-            <h3 className="text-4xl max-w-2xl md:text-[46px] md:leading-[60px] font-semibold mt-5 bg-gradient-to-r from-white to-gray-50 text-transparent bg-clip-text">
+            <h3 className="text-2xl lg:text-4xl w-full lg:max-w-2xl md:text-[46px] md:leading-[60px] font-semibold mt-5 bg-gradient-to-r from-white to-gray-50 text-transparent bg-clip-text">
               {t("title")}
             </h3>
 
