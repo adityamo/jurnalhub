@@ -6,9 +6,20 @@ import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 
-export const Navbar = ({ children }: { children: ReactNode }) => (
-  <nav className="sticky top-0 z-50 w-full bg-white/60 backdrop-blur-md">
-    <div className="container max-w-screen-xl mx-auto px-5">{children}</div>
+export const Navbar = ({
+  children,
+  isScrolled,
+}: {
+  children: ReactNode;
+  isScrolled?: boolean;
+}) => (
+  <nav
+    className={cn(
+      "sticky top-0 z-50 w-full transition-colors",
+      isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
+    )}
+  >
+    <div className="container mx-auto px-1 lg:px-12">{children}</div>
   </nav>
 );
 
@@ -21,8 +32,8 @@ export const NavBody = ({
 }) => (
   <div
     className={cn(
-      "hidden md:flex items-center justify-between w-full transition-all duration-300",
-      isScrolled ? "py-3 shadow-sm" : "py-4"
+      "hidden md:flex items-center justify-between w-full transition-[box-shadow] duration-300",
+      isScrolled ? "py-3 shadow-sm" : "py-3"
     )}
   >
     {children}

@@ -26,6 +26,13 @@
     "title": "Pendampingan yang Fokus pada Proses Akademik",
     "description": "Proses publikasi jurnal sering kali membutuhkan waktu, ketelitian, dan pemahaman terhadap standar masing-masing jurnal. Di sinilah kami berperan sebagai pendamping, membantu Anda memahami alur publikasi mulai dari penyesuaian naskah, pemilihan jurnal, hingga proses submit dan revisi."
   },
+  "Services": {
+    "badge": "Layanan",
+    "title": {
+      "line2": "Dari Kami",
+      "highlight": "Layanan Terbaik"
+    }
+  },
   "Product": {
     "badge": "Produk Kami",
     "title": {

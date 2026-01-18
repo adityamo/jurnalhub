@@ -14,42 +14,62 @@ export default function AnimatedTextWrapper({
   useEffect(() => {
     if (!scope.current) return;
 
-    const walk = (node: Node) => {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent) {
-        const parts = node.textContent.match(/(\s+|\S+)/g);
-        if (!parts) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-        const fragment = document.createDocumentFragment();
+    if (prefersReducedMotion) return;
 
-        parts.forEach((part) => {
-          if (part.trim() === "") {
-            fragment.appendChild(document.createTextNode(part));
-          } else {
-            const span = document.createElement("span");
-            span.textContent = part;
-            span.style.opacity = "0";
-            span.style.filter = "blur(10px)";
-            span.style.display = "inline-block";
-            span.dataset.word = "true";
-            fragment.appendChild(span);
-          }
-        });
-
-        node.parentNode?.replaceChild(fragment, node);
-        return;
+    const walker = document.createTreeWalker(
+      scope.current,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) =>
+          node.textContent?.trim()
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT,
       }
+    );
 
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        node.childNodes.forEach(walk);
-      }
-    };
+    const textNodes: Text[] = [];
+    let currentNode: Node | null;
 
-    walk(scope.current);
+    while ((currentNode = walker.nextNode())) {
+      textNodes.push(currentNode as Text);
+    }
+
+    textNodes.forEach((node) => {
+      const words = node.textContent!.split(/(\s+)/);
+      const fragment = document.createDocumentFragment();
+
+      words.forEach((word) => {
+        if (word.trim() === "") {
+          fragment.appendChild(document.createTextNode(word));
+        } else {
+          const span = document.createElement("span");
+          span.textContent = word;
+          span.dataset.word = "true";
+
+          span.style.display = "inline-block";
+          span.style.opacity = "0";
+          span.style.transform = "translateY(8px)";
+          span.style.willChange = "transform, opacity";
+
+          fragment.appendChild(span);
+        }
+      });
+
+      node.parentNode?.replaceChild(fragment, node);
+    });
 
     animate(
       "[data-word]",
-      { opacity: 1, filter: "blur(0px)" },
-      { delay: stagger(0.12), duration: 0.5 }
+      { opacity: 1, transform: "translateY(0px)" },
+      {
+        delay: stagger(0.05),
+        duration: 0.35,
+        ease: "easeOut",
+      }
     );
   }, []);
 

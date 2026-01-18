@@ -12,7 +12,6 @@ type Props = {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = params;
-  console.log(locale);
 
   if (!locales.includes(locale as any)) {
     notFound();

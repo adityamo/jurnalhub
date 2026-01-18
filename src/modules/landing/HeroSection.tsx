@@ -13,42 +13,42 @@ import { FiArrowRight } from "react-icons/fi";
 const HeroSection = () => {
   const t = useTranslations("Hero");
   return (
-    <section className="relative w-full overflow-hidden" id="hero">
-      <div
-        aria-hidden
-        className="
+    <ScrollReveal effect="slide-up" delay={0.05}>
+      <section className="relative w-full overflow-hidden" id="hero">
+        <div
+          aria-hidden
+          className="
           absolute inset-0 z-0
           opacity-0
           animate-[heroBgFade_0.9s_ease-out_0.15s_forwards]
         "
-        style={{
-          backgroundImage: `
+          style={{
+            backgroundImage: `
             linear-gradient(to right, #e7e5e4 1px, transparent 1px),
             linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)
           `,
-          backgroundSize: "28px 28px",
-          maskImage: `
+            backgroundSize: "28px 28px",
+            maskImage: `
             radial-gradient(
               ellipse 80% 80% at 0% 100%,
               black 55%,
               transparent 90%
             )
           `,
-          WebkitMaskImage: `
+            WebkitMaskImage: `
             radial-gradient(
               ellipse 80% 80% at 0% 100%,
               black 55%,
               transparent 90%
             )
           `,
-        }}
-      />
+          }}
+        />
 
-      <Container className="relative py-10 lg:py-16 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="flex flex-col gap-3">
-            <div className="flex w-full justify-center lg:justify-start">
-              <ScrollReveal effect="slide-up" delay={0.05}>
+        <Container className="relative py-10 lg:py-16 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div className="flex flex-col gap-3">
+              <div className="flex w-full justify-center lg:justify-start">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 text-sm text-gray-700 w-fit">
                   <Image
                     src="/assets/icon/trustedbadge.svg"
@@ -61,21 +61,19 @@ const HeroSection = () => {
                   />
                   {t("badge")}
                 </div>
-              </ScrollReveal>
-            </div>
-
-            <AnimatedTextWrapper>
-              <div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center lg:text-start leading-tight md:leading-snug lg:leading-normal text-black">
-                  {t("title.line1")}
-                  <span className="ms-2 text-blue-600">
-                    {t("title.highlight")}
-                  </span>
-                </h2>
               </div>
-            </AnimatedTextWrapper>
 
-            <ScrollReveal effect="slide-up" delay={0.15}>
+              <AnimatedTextWrapper>
+                <div>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center lg:text-start leading-tight md:leading-snug lg:leading-normal text-black">
+                    {t("title.line1")}
+                    <span className="ms-2 text-blue-600">
+                      {t("title.highlight")}
+                    </span>
+                  </h2>
+                </div>
+              </AnimatedTextWrapper>
+
               <p className="text-gray-600 max-w-xl leading-relaxed text-center lg:text-start">
                 {t("description")}
               </p>
@@ -166,11 +164,9 @@ const HeroSection = () => {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
-          </div>
+            </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <ScrollReveal effect="slide-up" delay={0.25}>
+            <div className="relative flex justify-center lg:justify-end">
               <Image
                 src="/assets/illustration/hero-1.svg"
                 alt="Hero Person"
@@ -190,11 +186,11 @@ const HeroSection = () => {
     data-[loaded=true]:scale-100
   "
               />
-            </ScrollReveal>
+            </div>
           </div>
-        </div>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </ScrollReveal>
   );
 };
 

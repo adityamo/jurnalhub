@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const FooterLanding = () => {
   return (
-    <footer className="relative overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-gray-50 bg-slate-900 pt-10">
+    <footer className="relative overflow-hidden px-6 md:px-16 lg:px-12  w-full text-sm text-gray-50 bg-slate-900 pt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
         <div className="sm:col-span-2 lg:col-span-1">
           <Link
@@ -49,7 +49,7 @@ const FooterLanding = () => {
               <FiMapPin className="text-white text-xl mt-1" />
               <div className="flex flex-col space-y-1">
                 <p className="text-md font-semibold text-white">
-                  Sentra Car Garage
+                  Sentra Publishing
                 </p>
                 <p className="text-sm font-normal text-gray-100">
                   MT Haryono St No.Kav. 8 Lantai 9, Cawang, Jatinegara, East
@@ -60,7 +60,7 @@ const FooterLanding = () => {
             <div className="inline-flex items-center gap-4">
               <FiMail className="text-white text-sm mt-1" />
               <p className="text-md font-semibold text-white">
-                example.email@agrinas.co.id
+                example.email@sentra.co.id
               </p>
             </div>
             <div className="inline-flex items-center gap-4">
