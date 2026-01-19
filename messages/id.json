@@ -31,6 +31,26 @@
     "title": {
       "line2": "Dari Kami",
       "highlight": "Layanan Terbaik"
+    },
+    "bento1": {
+      "title": "Pendampingan Publikasi Jurnal Nasional",
+      "subtitle": "Pendampingan publikasi ke jurnal nasional terakreditasi, termasuk jurnal SINTA dan ISSN, dengan menyesuaikan ruang lingkup dan ketentuan jurnal."
+    },
+    "bento2": {
+      "title": "Publikasi Jurnal Internasional",
+      "subtitle": "Pendampingan untuk publikasi ke jurnal internasional yang terindeks Scopus, DOAJ, atau basis data lain."
+    },
+    "bento3": {
+      "title": "Editing, Proofreading, dan Pengecekan Kemiripan",
+      "subtitle": "Pendampingan penyuntingan bahasa akademik, perapihan struktur artikel, serta pengecekan tingkat kemiripan sesuai standar jurnal."
+    },
+    "bento4": {
+      "title": "Bantuan Submit & Tanggapan Reviewer",
+      "subtitle": "Pendampingan teknis saat proses submit dan penyusunan respon terhadap masukan reviewer, agar revisi dapat dilakukan lebih terarah."
+    },
+    "bento5": {
+      "title": "Ayo Coba Mulai Diskusikan Jurnal Anda",
+      "btn": "Mulai Diskusi Sekarang"
     }
   },
   "Product": {
@@ -39,6 +59,20 @@
       "line1": "Produk",
       "highlight": "Esklusif",
       "line2": "Dari Kami"
+    }
+  },
+  "Professional": {
+    "badge": "Team Kami",
+    "title": {
+      "highlight": "Tim Ahli",
+      "line2": "Dibidangnya"
+    }
+  },
+  "Testimonials": {
+    "badge": "Testimonials",
+    "title": {
+      "highlight": "Testimonials",
+      "line2": "Dari Client Kami"
     }
   },
   "CTA": {

@@ -1,6 +1,7 @@
 import { MarqueeCards } from "@/components/testimonials/MarqueeCard";
 import React from "react";
 import Container from "@/components/container";
+import { useTranslations } from "next-intl";
 
 const cardsData = [
   {
@@ -52,20 +53,21 @@ const cardsData = [
 ];
 
 const TestimonialsSection = () => {
+  const t = useTranslations("Testimonials");
   return (
     <section className="py-20 space-y-10" id="testimonials">
       <Container>
         <div className="flex w-full justify-center">
-          <div className="space-y-5 text-center max-w-lg mb-5 lg:mb-8">
+          <div className="space-y-5 text-center max-w-xl mb-5 lg:mb-8">
             <div>
               <span className="px-4 py-2.5 bg-white border border-gray-200 rounded-full text-primary font-normal text-sm lg:text-md">
-                Testimonials
+                {t("badge")}
               </span>
             </div>
 
             <h3 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
-              <span className="text-primary me-2">Testimonials</span>
-              Dari Client Kami
+              <span className="text-primary me-2">{t("title.highlight")}</span>
+              {t("title.line2")}
             </h3>
           </div>
         </div>

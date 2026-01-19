@@ -111,7 +111,7 @@ const HeroSection = () => {
               <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center lg:text-start leading-tight md:leading-snug lg:leading-normal text-black">
                   {t("title.line1")}
-                  <span className="ms-2 text-blue-600">
+                  <span data-no-animate className="ms-2 text-blue-600">
                     {t("title.highlight")}
                   </span>
                 </h2>

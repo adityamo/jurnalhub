@@ -15,11 +15,13 @@ export default function AnimatedTextWrapper({
     if (!scope.current) return;
 
     const walk = (node: Node) => {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent) {
+      // ✅ Proses hanya TEXT NODE
+      if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
         const parts = node.textContent.match(/(\s+|\S+)/g);
         if (!parts) return;
 
         const fragment = document.createDocumentFragment();
+        const parent = node.parentElement;
 
         parts.forEach((part) => {
           if (part.trim() === "") {
@@ -27,10 +29,18 @@ export default function AnimatedTextWrapper({
           } else {
             const span = document.createElement("span");
             span.textContent = part;
+            span.dataset.word = "true";
+
+            // 🔑 Styling awal animasi
             span.style.opacity = "0";
             span.style.filter = "blur(10px)";
             span.style.display = "inline-block";
-            span.dataset.word = "true";
+
+            // 🔥 PENTING: jaga warna highlight
+            if (parent) {
+              span.style.color = "inherit";
+            }
+
             fragment.appendChild(span);
           }
         });
@@ -39,17 +49,22 @@ export default function AnimatedTextWrapper({
         return;
       }
 
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        node.childNodes.forEach(walk);
-      }
+      node.childNodes.forEach(walk);
     };
 
     walk(scope.current);
 
     animate(
       "[data-word]",
-      { opacity: 1, filter: "blur(0px)" },
-      { delay: stagger(0.12), duration: 0.5 }
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+      },
+      {
+        delay: stagger(0.12),
+        duration: 0.45,
+        ease: "easeOut",
+      }
     );
   }, []);
 
