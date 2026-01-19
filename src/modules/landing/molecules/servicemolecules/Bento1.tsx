@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { FiCheck } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 const Bento1 = () => {
+  const t = useTranslations("Services.bento1");
   return (
     <div
       className=" relative h-full overflow-hidden rounded-2xl
@@ -14,14 +16,10 @@ const Bento1 = () => {
       <div className="grid grid-cols-1  gap-8 px-3 py-4 lg:px-5 lg:py-4">
         <div className="z-10 lg:max-w-md">
           <h2 className="text-xl lg:text-2xl font-semibold text-slate-800">
-            Pendampingan Publikasi Jurnal Nasional
+            {t("title")}
           </h2>
 
-          <p className="mt-4 text-gray-500 text-sm">
-            Pendampingan publikasi ke jurnal nasional terakreditasi, termasuk
-            jurnal SINTA dan ISSN, dengan menyesuaikan ruang lingkup dan
-            ketentuan jurnal.
-          </p>
+          <p className="mt-4 text-gray-500 text-sm"> {t("subtitle")}</p>
 
           <ul className="mt-6 space-y-3 text-sm text-gray-500">
             <li className="flex items-center gap-3">

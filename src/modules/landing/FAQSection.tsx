@@ -20,8 +20,8 @@ const FAQSection = () => {
   return (
     <section className="relative bg-gray-50" id="faq">
       <Container className="py-10">
-        <div className="grid md:grid-cols-5 gap-10">
-          <div className="md:col-span-2">
+        <div className="grid md:grid-cols-2 gap-10">
+          <div className="max-w-xl">
             <span className="px-4 py-2.5 bg-white border rounded-full text-primary text-sm">
               {t("badge")}
             </span>
@@ -40,7 +40,7 @@ const FAQSection = () => {
             </div>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="">
             {items.map((item, index) => {
               const isOpen = openIndex === index;
 

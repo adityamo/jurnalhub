@@ -41,8 +41,38 @@
       "highlight": "Best Services"
     },
     "bento1": {
-      "title": "",
-      "subtitle": ""
+      "title": "National Journal Publication Assistance",
+      "subtitle": "Publication assistance to accredited national journals, including SINTA and ISSN journals, by adjusting the scope and provisions of the journal."
+    },
+    "bento2": {
+      "title": "International Journal Publication",
+      "subtitle": "Assistance for publication in international journals indexed by Scopus, DOAJ, or other databases."
+    },
+    "bento3": {
+      "title": "Editing, Proofreading, and Similarity Checking",
+      "subtitle": "Assistance in editing academic language, tidying up article structure, and checking the level of similarity according to journal standards."
+    },
+    "bento4": {
+      "title": "Submit Assistance & Reviewer Response",
+      "subtitle": "Technical assistance during the submission process and preparation of responses to reviewer input, so that revisions can be carried out in a more focused manner."
+    },
+    "bento5": {
+      "title": "Let's Try to Start Discussing Your Journal",
+      "btn": "Start Discussion Now"
+    }
+  },
+  "Professional": {
+    "badge": "Our Team",
+    "title": {
+      "highlight": "Team of Experts",
+      "line2": "in their fields"
+    }
+  },
+  "Testimonials": {
+    "badge": "Testimonials",
+    "title": {
+      "highlight": "Testimonials",
+      "line2": "From Our Clients"
     }
   },
   "CTA": {

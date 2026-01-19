@@ -1,7 +1,9 @@
 import { handleToContact } from "@/helpers/globalHelper";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const Bento5 = () => {
+  const t = useTranslations("Services.bento5");
   return (
     <div className="relative h-full min-h-[320px] rounded-2xl overflow-hidden hover:-translate-y-1.5 transition duration-300 hover:shadow-lg">
       <Image
@@ -15,14 +17,14 @@ const Bento5 = () => {
 
       <div className="relative z-10 h-full flex flex-col justify-end p-6">
         <h3 className="text-white text-xl lg:text-2xl font-semibold leading-snug">
-          Mulai Diskusi Publikasi Jurnal Anda
+          {t("title")}
         </h3>
 
         <button
           onClick={handleToContact}
           className="mt-4 inline-flex items-center gap-2 w-fit rounded-xl bg-white px-5 py-3 text-sm font-medium text-blue-700 hover:bg-blue-50 transition"
         >
-          Mulai Diskusi Sekarang
+          {t("btn")}
           <span className="text-lg">›</span>
         </button>
       </div>

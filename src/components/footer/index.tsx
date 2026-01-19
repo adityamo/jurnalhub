@@ -72,7 +72,7 @@ const FooterLanding = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t mt-6 border-slate-200">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t mt-6 border-slate-600">
         <p className="text-center">
           Copyright 2026 © <a href="https://prebuiltui.com">Dytama Studio</a>{" "}
           All Right Reserved.

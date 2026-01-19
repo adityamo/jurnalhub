@@ -2,8 +2,10 @@ import Container from "@/components/container";
 import React from "react";
 import Image from "next/image";
 import ScrollReveal from "@/components/motionreveal/ScrollReveal";
+import { useTranslations } from "next-intl";
 
 const ProPersonSection = () => {
+  const t = useTranslations("Professional");
   const professional = [
     {
       id: 1,
@@ -22,16 +24,18 @@ const ProPersonSection = () => {
       <Container>
         <ScrollReveal effect="slide-up" delay={0.15}>
           <div className="flex w-full justify-center">
-            <div className="space-y-5 text-center max-w-lg mb-5 lg:mb-8">
+            <div className="space-y-5 text-center max-w-xl mb-5 lg:mb-8">
               <div>
                 <span className="px-4 py-2.5 bg-white border border-gray-200 rounded-full text-primary font-normal text-sm lg:text-md">
-                  Team Kami
+                  {t("badge")}
                 </span>
               </div>
 
               <h3 className="text-black font-semibold text-2xl lg:text-4xl leading-tight md:leading-snug lg:leading-normal">
-                <span className="text-primary"> Tim Ahli </span>
-                Dibidangnya
+                <span className="text-primary me-2">
+                  {t("title.highlight")}
+                </span>
+                {t("title.line2")}
               </h3>
             </div>
           </div>
