@@ -73,7 +73,7 @@ const CTASection = () => {
 
           <div className="absolute right-0 bottom-0 hidden lg:block w-[460px] h-[560px] pointer-events-none">
             <Image
-              src="/assets/illustration/cta-1.svg"
+              src="/assets/illustration/cta-1.webp"
               alt="CTA Illustration"
               fill
               className="object-contain object-bottom"

@@ -57,7 +57,7 @@ const Bento1 = () => {
     "
       >
         <Image
-          src="/assets/illustration/Illus-1.svg"
+          src="/assets/illustration/Illus-1.webp"
           alt="Hero Person"
           width={220}
           height={520}

@@ -203,7 +203,7 @@ const HeroSection = () => {
               "
             >
               <Image
-                src="/assets/illustration/hero-1.svg"
+                src="/assets/illustration/hero-1.webp"
                 alt="Hero illustration"
                 width={420}
                 height={520}

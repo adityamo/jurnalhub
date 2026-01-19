@@ -13,7 +13,7 @@ const AboutSection = () => {
     >
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-18 py-10 lg:py-18 lg:items-center">
         <Image
-          src="/assets/illustration/about-1.svg"
+          src="/assets/illustration/about-1.png"
           alt="Hero Person"
           width={420}
           height={520}

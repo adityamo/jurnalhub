@@ -17,7 +17,7 @@ const Bento2 = () => {
 
       <div className="mt-auto px-4">
         <Image
-          src="/assets/illustration/Illus-2.svg"
+          src="/assets/illustration/Illus-2.webp"
           alt="Scopus Preview"
           width={220}
           height={520}
