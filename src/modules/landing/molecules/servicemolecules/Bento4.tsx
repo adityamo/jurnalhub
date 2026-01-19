@@ -18,7 +18,7 @@ const Bento4 = () => {
         <div className="absolute inset-x-0 bottom-[10px] h-full px-4">
           <div className="relative w-full h-full overflow-hidden rounded-t-2xl">
             <Image
-              src="/assets/illustration/Illus-4.webp"
+              src="/assets/illustration/illus-4.webp"
               alt="Scopus Preview"
               fill
               className="object-cover"
