@@ -5,7 +5,7 @@ const Bento5 = () => {
   return (
     <div className="relative h-full min-h-[320px] rounded-2xl overflow-hidden hover:-translate-y-1.5 transition duration-300 hover:shadow-lg">
       <Image
-        src="/assets/illustration/Illus-5.webp"
+        src="/assets/illustration/illus-5.webp"
         alt="Diskusi Publikasi Jurnal"
         fill
         className="object-cover"
