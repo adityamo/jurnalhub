@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/assets/logo/logoonly.png",
-        href: "/assets/logo/logoonly.png",
+        url: "/assets/logo/cakrawala-icon.png",
+        href: "/assets/logo/cakrawala-icon.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/assets/logo/logoonly.png",
-        href: "/assets/logo/logoonly.png",
+        url: "/assets/logo/cakrawala-icon.png",
+        href: "/assets/logo/cakrawala-icon.png",
       },
     ],
   },

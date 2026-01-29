@@ -7,6 +7,7 @@ import { FiChevronDown, FiGlobe } from "react-icons/fi";
 import { handleToContact } from "@/helpers/globalHelper";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 interface LanguageSwitcherProps {
   selectedLang: string;
@@ -23,11 +24,11 @@ interface Language {
 export const NavbarLogo = () => (
   <Link href="/" className="flex-shrink-0">
     <Image
-      src="/assets/logo/sentrapub-color.svg"
+      src={siteConfig.imgUrl}
       width={120}
       height={24}
       alt="Sentra Publisher"
-      className="block w-40 md:w-48 lg:w-48"
+      className="block w-28 h-auto md:h-auto lg:h-auto md:w-30 lg:w-40"
       priority
     />
   </Link>
@@ -46,8 +47,6 @@ export const LanguageSwitcher = ({
   const languages: Language[] = [
     { code: "ID", label: "Indonesia" },
     { code: "EN", label: "English" },
-    { code: "ZH", label: "中文" },
-    { code: "JA", label: "日本語" },
   ];
 
   const LOCALE_MAP: Record<string, string> = {
@@ -78,10 +77,15 @@ export const LanguageSwitcher = ({
 
   if (isMobile) {
     return (
-      <div className={cn("relative w-full max-w-xs px-4", className)}>
+      <div
+        className={cn(
+          "relative w-full max-w-xs px-4 overflow-hidden",
+          className
+        )}
+      >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center gap-2 px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg bg-white hover:border-gray-400 transition-colors"
+          className="w-full flex items-center gap-2 px-4 py-3  border-2 border-dashed border-gray-300 rounded-lg bg-white hover:border-gray-400 transition-colors overflow-hidden"
           aria-haspopup="listbox"
           aria-expanded={isOpen}
         >
@@ -99,7 +103,7 @@ export const LanguageSwitcher = ({
 
         {isOpen && (
           <div
-            className="absolute top-full left-4 right-4 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
+            className="absolute top-full left-4 right-4 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"
             role="listbox"
           >
             {languages.map((lang) => (
@@ -109,7 +113,7 @@ export const LanguageSwitcher = ({
                 role="option"
                 aria-selected={selectedLang === lang.code}
                 className={cn(
-                  "w-full text-left px-4 py-3 hover:bg-blue-50 transition-colors",
+                  "w-full text-left px-4 py-3 lg:px-8  hover:bg-blue-50 transition-colors",
                   selectedLang === lang.code
                     ? "bg-blue-100 text-blue-600 font-medium"
                     : "text-gray-700"

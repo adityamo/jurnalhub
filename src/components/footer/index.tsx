@@ -15,7 +15,7 @@ const FooterLanding = () => {
             className="relative  z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
           >
             <Image
-              src="/assets/logo/sentrapub-white.svg"
+              src={siteConfig.imgUrl}
               width={300}
               height={300}
               alt="dytama-icon"
@@ -45,43 +45,36 @@ const FooterLanding = () => {
 
         <div>
           <div className="flex flex-col lg:items-start lg:justify-center gap-5">
-            <div className="inline-flex items-start gap-4">
+            <div className="inline-flex items-start gap-3 max-w-sm">
               <FiMapPin className="text-white text-xl mt-1" />
               <div className="flex flex-col space-y-1">
                 <p className="text-md font-semibold text-white">
-                  Sentra Publishing
+                  {siteConfig.name}
                 </p>
                 <p className="text-sm font-normal text-gray-100">
-                  MT Haryono St No.Kav. 8 Lantai 9, Cawang, Jatinegara, East
-                  Jakarta City, Jakarta 13340
+                  {siteConfig.address}
                 </p>
               </div>
             </div>
             <div className="inline-flex items-center gap-4">
               <FiMail className="text-white text-sm mt-1" />
               <p className="text-md font-semibold text-white">
-                example.email@sentra.co.id
+                {siteConfig.email}
               </p>
             </div>
             <div className="inline-flex items-center gap-4">
               <FiPhone className="text-white text-sm mt-1" />
               <p className="text-md font-semibold text-white">
-                +62 869948457879
+                {siteConfig.whatsappNumber}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t mt-6 border-slate-600">
+      <div className="flex w-full justify-center items-center gap-4 py-4 border-t mt-6 border-slate-600">
         <p className="text-center">
-          Copyright 2026 © <a href="https://prebuiltui.com">Dytama Studio</a>{" "}
-          All Right Reserved.
+          Copyright 2026 © <a href="">{siteConfig.name}</a> All Right Reserved.
         </p>
-        <div className="flex items-center gap-4">
-          <a href="/">Privacy Policy</a>
-          <a href="/">Terms of Service</a>
-          <a href="/">Cookie Policy</a>
-        </div>
       </div>
     </footer>
   );

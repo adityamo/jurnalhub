@@ -85,7 +85,7 @@ const HeroSection = () => {
       />
 
       <Container className="relative py-10 lg:py-2 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-2 items-center">
           <motion.div
             className="flex flex-col gap-3"
             variants={fadeUp}

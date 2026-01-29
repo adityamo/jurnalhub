@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { siteConfig } from "@/config/site";
 
 type FAQItem = {
   question: string;
@@ -35,7 +36,7 @@ const FAQSection = () => {
             <div className="mt-10 space-y-2">
               <p className="text-sm text-gray-500">{t("contactLabel")}</p>
               <p className="text-xl font-semibold text-primary">
-                {t("contactEmail")}
+                {siteConfig.email}
               </p>
             </div>
           </div>

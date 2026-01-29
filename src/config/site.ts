@@ -1,15 +1,18 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Jurnal Hub",
-  description: "Jurnal Agency Platform",
+  name: "Cakrawala Lembaga Publikasi",
+  description:
+    "Lembaga Publikasi Cakrawala Publisher jurnal nasional dan jurnal internasional yang terverifikasi dengan shita dan ocupus",
   ogImage: "https://nextui.org/twitter-cards/nextui.jpeg",
-  author: "aditya septama",
-  email: "rfadityahalim18@gmail.com",
-  whatsappNumber: "62897478837884",
+  author: "cakrawala",
+  email: "aasisten4@gmail.com",
+  whatsappNumber: "081559546191",
   whatsappMessage:
-    "Hai saya membutuhkan bantuan untuk jasa publish karya ilmiah",
+    "Halo kak, saya ingin berkonsultasi mengenai publikasi jurnal, mohon dibantu",
   siteUrl: "https://nextui.org",
+  address: "Jl. Perum indah Mulyorejo Mandiri Kota Malang Blok E Nomor 13",
+  imgUrl: "/assets/logo/cakrawala-full.png",
   creator: "@adityamo",
   openGraph: {
     type: "website",
