@@ -6,14 +6,14 @@ import React from "react";
 
 const ProductSection = () => {
   const products = [
-    { id: 1, image: "/assets/product/product-1.png", title: "Copernicus" },
-    { id: 2, image: "/assets/product/product-2.png", title: "DOAJ" },
+    { id: 1, image: "/assets/product/1.png", title: "Copernicus" },
+    { id: 2, image: "/assets/product/2.png", title: "DOAJ" },
     {
       id: 3,
-      image: "/assets/product/product-3.png",
+      image: "/assets/product/3.png",
       title: "Call For Paper",
     },
-    { id: 4, image: "/assets/product/product-4.png", title: "SINTA" },
+    { id: 4, image: "/assets/product/4.png", title: "SINTA" },
   ];
 
   const t = useTranslations("Product");

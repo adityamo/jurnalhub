@@ -55,11 +55,11 @@ const Bento1 = () => {
     "
       >
         <Image
-          src="/assets/illustration/illus-1.webp"
+          src="/assets/illustration/illus-1.png"
           alt="Hero Person"
           width={220}
           height={520}
-          className="w-full select-none"
+          className="w-100 h-auto select-none"
         />
       </div>
     </div>

@@ -14,14 +14,26 @@ const Bento2 = () => {
         <p className="mt-2 text-gray-500 text-sm">{t("subtitle")}</p>
       </div>
 
-      <div className="mt-auto px-4">
-        <Image
-          src="/assets/illustration/illus-2.webp"
-          alt="Scopus Preview"
-          width={220}
-          height={520}
-          className="mx-auto max-h-[260px] w-auto"
-        />
+      <div className="relative w-full min-h-[200px] lg:flex-1">
+        <div className="absolute inset-x-0 bottom-0 lg:bottom-[45px] h-full px-4">
+          <div className="relative w-full min-h-[200px] lg:min-h-[260px] overflow-hidden">
+            <Image
+              src="/assets/illustration/illus-2.png"
+              alt="Scopus Preview"
+              width={550}
+              height={300}
+              className="
+      absolute
+      bottom-0
+      left-1/2
+      -translate-x-1/2
+      w-[550px]
+      h-auto
+      object-contain
+    "
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

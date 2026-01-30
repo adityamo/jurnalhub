@@ -1,8 +1,10 @@
 import Container from "@/components/container";
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import ScrollReveal from "@/components/motionreveal/ScrollReveal";
 import { useTranslations } from "next-intl";
+import InfiniteCarousel from "@/components/carousel/InfiniteCarousel";
+import Image from "next/image";
 
 const ProPersonSection = () => {
   const t = useTranslations("Professional");
@@ -17,6 +19,11 @@ const ProPersonSection = () => {
       id: 3,
       image: "/assets/sertifikat/sertifikat-3.png",
       title: "Call For Paper",
+    },
+    {
+      id: 1,
+      image: "/assets/sertifikat/sertifikat-1.png",
+      title: "Copernicus",
     },
   ];
   return (
@@ -41,26 +48,21 @@ const ProPersonSection = () => {
           </div>
         </ScrollReveal>
         <ScrollReveal effect="slide-down" delay={0.15}>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
-            {professional.map((item, index) => {
-              return (
-                <div
-                  key={`${item.id}-${index}`}
-                  className="shadow-md rounded-xl overflow-hidden"
-                >
-                  <div className="relative">
-                    <Image
-                      src={item.image}
-                      alt={item.title ?? "carousel item"}
-                      height={200}
-                      width={400}
-                      className="object-cover h-auto w-full lg:h-70 lg:w-200"
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <InfiniteCarousel
+            items={professional}
+            columns={3}
+            renderItem={(item) => (
+              <div className="shadow-md rounded-xl bg-white p-3">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
+            )}
+          />
         </ScrollReveal>
       </Container>
     </section>

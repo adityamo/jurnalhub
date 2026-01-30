@@ -85,7 +85,7 @@ const HeroSection = () => {
       />
 
       <Container className="relative py-10 lg:py-2 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-2 items-center">
           <motion.div
             className="flex flex-col gap-3"
             variants={fadeUp}
@@ -133,8 +133,8 @@ const HeroSection = () => {
                 onClick={handleToContact}
                 className="
                   inline-flex items-center gap-2 px-6 h-11
-                  rounded-lg bg-blue-600 text-white font-medium
-                  hover:bg-blue-700 transition
+                  rounded-lg bg-gradient-to-b from-blue-600 to-[#004AAD] text-white font-medium
+                  hover:from-blue-600 hover:to-blue-900 transition
                 "
               >
                 {t("cta")} <FiArrowRight />
@@ -146,20 +146,18 @@ const HeroSection = () => {
               className="flex items-center gap-3 lg:mt-10 mt-5"
             >
               <div className="flex -space-x-2">
-                {[
-                  "1568602471122-7832951cc4c5",
-                  "1531927557220-a9e23c1e4794",
-                  "1541101767792-f9b2b1c4f127",
-                ].map((id, i) => (
-                  <Image
-                    key={i}
-                    className="size-11 rounded-full ring-2 ring-white"
-                    src={`https://images.unsplash.com/photo-${id}?auto=format&fit=facearea&facepad=2&w=300&h=300&q=80`}
-                    alt="Avatar"
-                    width={44}
-                    height={44}
-                  />
-                ))}
+                {["avatar-1.png", "avatar-2.png", "avatar-5.png"].map(
+                  (id, i) => (
+                    <Image
+                      key={i}
+                      className="size-11 rounded-full ring-2 ring-white"
+                      src={`/assets/avatar/${id}`}
+                      alt="Avatar"
+                      width={44}
+                      height={44}
+                    />
+                  )
+                )}
               </div>
 
               <div className="flex flex-col space-y-1">

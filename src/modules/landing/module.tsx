@@ -4,10 +4,11 @@ import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
 import ProductSection from "./ProductSection";
-import ProPersonSection from "./ProPersonSection";
+// import ProPersonSection from "./ProPersonSection";
 import FAQSection from "./FAQSection";
 import CTASection from "./CTASection";
 import TestimonialsSection from "./TestimonialsSection";
+import BenefitSection from "./BenefitSection";
 
 export default function LandingModule() {
   return (
@@ -16,7 +17,8 @@ export default function LandingModule() {
       <AboutSection />
       <ServicesSection />
       <ProductSection />
-      <ProPersonSection />
+      {/* <ProPersonSection /> */}
+      <BenefitSection />
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
