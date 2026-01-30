@@ -15,13 +15,22 @@ const Bento2 = () => {
       </div>
 
       <div className="relative w-full min-h-[200px] lg:flex-1">
-        <div className="absolute inset-x-0 bottom-[-30px] h-full px-4">
-          <div className="relative w-full h-full overflow-hidden rounded-t-2xl">
+        <div className="absolute inset-x-0 bottom-0 lg:bottom-[45px] h-full px-4">
+          <div className="relative w-full min-h-[200px] lg:min-h-[260px] overflow-hidden">
             <Image
-              src="/assets/illustration/illus-2.webp"
+              src="/assets/illustration/illus-2.png"
               alt="Scopus Preview"
-              fill
-              className="object-cover"
+              width={550}
+              height={300}
+              className="
+      absolute
+      bottom-0
+      left-1/2
+      -translate-x-1/2
+      w-[550px]
+      h-auto
+      object-contain
+    "
             />
           </div>
         </div>

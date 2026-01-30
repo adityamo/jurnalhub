@@ -53,6 +53,14 @@
       "btn": "Mulai Diskusi Sekarang"
     }
   },
+  "Benefits": {
+    "badge": "Keuntungan",
+    "title": {
+      "highlight": "Keuntungan",
+      "line2": "Yang Diperoleh Publish Dengan Lembaga Publikasi Cakrawala"
+    },
+    "subtitle": "Publikasikan karya ilmiah Anda dengan proses yang mudah, transparan, dan terpercaya. Kami hadir untuk mendampingi Anda dari awal hingga artikel terbit."
+  },
   "Product": {
     "badge": "Produk Kami",
     "title": {

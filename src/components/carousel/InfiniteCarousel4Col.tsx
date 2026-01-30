@@ -6,6 +6,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+
 interface CarouselItem {
   id: number | string;
   image: string;
@@ -28,11 +32,23 @@ export default function InfiniteCarousel4Col({
   const controls = useAnimation();
   const [index, setIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(4);
+
   const isAnimating = useRef(false);
   const isPaused = useRef(false);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
+  /* =======================
+     LIGHTBOX STATE
+  ======================== */
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
   const duplicatedItems = [...items, ...items];
+
+  const slides = items.map((item) => ({
+    src: item.image,
+    title: item.title,
+  }));
 
   /* =======================
      RESPONSIVE BREAKPOINT
@@ -59,7 +75,7 @@ export default function InfiniteCarousel4Col({
      AUTOPLAY
   ======================== */
   useEffect(() => {
-    if (isPaused.current) return;
+    if (isPaused.current || lightboxOpen) return;
 
     autoplayRef.current = setInterval(() => {
       next();
@@ -70,7 +86,7 @@ export default function InfiniteCarousel4Col({
         clearInterval(autoplayRef.current);
       }
     };
-  }, [index, itemsPerPage]);
+  }, [index, itemsPerPage, lightboxOpen]);
 
   /* =======================
      LOOP HANDLER
@@ -117,6 +133,21 @@ export default function InfiniteCarousel4Col({
   };
 
   /* =======================
+     BODY SCROLL LOCK
+  ======================== */
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxOpen]);
+
+  /* =======================
      RENDER
   ======================== */
   return (
@@ -134,26 +165,37 @@ export default function InfiniteCarousel4Col({
         onDragEnd={(e, info) => {
           isPaused.current = false;
 
-          // Velocity based swipe (mobile friendly)
           if (info.velocity.x < -500 || info.offset.x < -80) next();
           if (info.velocity.x > 500 || info.offset.x > 80) prev();
         }}
         className="flex gap-6 w-max cursor-grab active:cursor-grabbing"
       >
-        {duplicatedItems.map((item, i) => (
-          <div key={`${item.id}-${i}`} className="w-[260px] shrink-0">
-            <div className="shadow-md rounded-xl overflow-hidden">
-              <div className="relative aspect-[3/4]">
-                <Image
-                  src={item.image}
-                  alt={item.title ?? "carousel item"}
-                  fill
-                  className="object-cover"
-                />
+        {duplicatedItems.map((item, i) => {
+          const realIndex = i % items.length;
+
+          return (
+            <div
+              key={`${item.id}-${i}`}
+              className="w-[260px] shrink-0 cursor-pointer"
+              onClick={() => {
+                setLightboxIndex(realIndex);
+                setLightboxOpen(true);
+                isPaused.current = true;
+              }}
+            >
+              <div className="shadow-md rounded-xl overflow-hidden hover:scale-[1.03] transition">
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src={item.image}
+                    alt={item.title ?? "carousel item"}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </motion.div>
 
       {/* DESKTOP NAV */}
@@ -172,6 +214,23 @@ export default function InfiniteCarousel4Col({
           <FiChevronRight />
         </button>
       </div>
+
+      {/* LIGHTBOX FULLSCREEN */}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => {
+          setLightboxOpen(false);
+          isPaused.current = false;
+        }}
+        index={lightboxIndex}
+        slides={slides}
+        plugins={[Zoom]}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+        }}
+      />
     </div>
   );
 }

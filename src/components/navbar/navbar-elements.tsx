@@ -171,7 +171,7 @@ export const NavbarButton = ({
   <button
     className={cn(
       "h-11 px-5 rounded-full text-sm font-medium text-white",
-      "bg-gradient-to-b from-blue-500 to-blue-600",
+      "bg-gradient-to-b from-blue-600 to-[#004AAD]",
       "hover:shadow-lg active:scale-95 transition",
       className
     )}

@@ -61,6 +61,14 @@
       "btn": "Start Discussion Now"
     }
   },
+  "Benefits": {
+    "badge": "Benefits",
+    "title": {
+      "highlight": "Benefits",
+      "line2": "Publish on Lembaga Cakrawala"
+    },
+    "subtitle": "Publish your scientific work with a simple, transparent, and reliable process. We're here to support you from start to finish."
+  },
   "Professional": {
     "badge": "Our Team",
     "title": {

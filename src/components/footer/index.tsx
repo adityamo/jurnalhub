@@ -15,11 +15,11 @@ const FooterLanding = () => {
             className="relative  z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
           >
             <Image
-              src={siteConfig.imgUrl}
+              src={siteConfig.imgUrl_white}
               width={300}
               height={300}
               alt="dytama-icon"
-              className="w-20 lg:w-50"
+              className="w-20 lg:w-50 h-auto lg:h-auto"
             />
           </Link>
           <p className="text-sm/7 mt-6">

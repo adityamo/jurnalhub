@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SocialMediaIcon } from "./SocialMediaIcon";
+// import { SocialMediaIcon } from "./SocialMediaIcon";
 
 type CardProps = {
   image: string;
@@ -7,6 +7,7 @@ type CardProps = {
   handle: string;
   date: string;
   platform: "tiktok" | "instagram" | "facebook" | "gmail";
+  message?: string;
 };
 
 export const SocialMediaCard = ({
@@ -15,6 +16,7 @@ export const SocialMediaCard = ({
   handle,
   date,
   platform,
+  message,
 }: CardProps) => {
   return (
     <div className="p-4 rounded-lg mx-4 shadow hover:shadow-lg transition-all duration-200 w-72 shrink-0 bg-white">
@@ -34,13 +36,11 @@ export const SocialMediaCard = ({
             <p className="font-medium text-sm">{name}</p>
             <span className="text-xs text-slate-500">{handle}</span>
           </div>
-          <SocialMediaIcon platform={platform} size={14} />
+          {/* <SocialMediaIcon platform={platform} size={14} /> */}
         </div>
       </div>
 
-      <p className="text-sm py-4 text-gray-800">
-        Radiant made undercutting all of our competitors an absolute breeze.
-      </p>
+      <p className="text-sm py-4 text-gray-800">{message}</p>
     </div>
   );
 };

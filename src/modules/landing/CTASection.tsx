@@ -16,27 +16,18 @@ const CTASection = () => {
           <div className="relative z-10 flex flex-col items-start justify-center text-left max-w-2xl">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
-                <Image
-                  className="size-8 rounded-full ring-2 ring-white"
-                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&w=300&h=300&q=80"
-                  alt="Avatar"
-                  width={44}
-                  height={44}
-                />
-                <Image
-                  className="size-8 rounded-full ring-2 ring-white"
-                  src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?auto=format&w=300&h=300&q=80"
-                  alt="Avatar"
-                  width={44}
-                  height={44}
-                />
-                <Image
-                  className="size-8 rounded-full ring-2 ring-white"
-                  src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?auto=format&w=300&h=300&q=80"
-                  alt="Avatar"
-                  width={44}
-                  height={44}
-                />
+                {["avatar-1.png", "avatar-2.png", "avatar-5.png"].map(
+                  (id, i) => (
+                    <Image
+                      key={i}
+                      className="size-11 rounded-full ring-2 ring-white"
+                      src={`/assets/avatar/${id}`}
+                      alt="Avatar"
+                      width={44}
+                      height={44}
+                    />
+                  )
+                )}
               </div>
 
               <div>

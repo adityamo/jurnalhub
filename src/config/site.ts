@@ -13,6 +13,7 @@ export const siteConfig = {
   siteUrl: "https://nextui.org",
   address: "Jl. Perum indah Mulyorejo Mandiri Kota Malang Blok E Nomor 13",
   imgUrl: "/assets/logo/cakrawala-full.png",
+  imgUrl_white: "/assets/logo/cakrawala-white.png",
   creator: "@adityamo",
   openGraph: {
     type: "website",
