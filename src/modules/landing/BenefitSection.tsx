@@ -16,49 +16,67 @@ import {
 import { handleToContact } from "@/helpers/globalHelper";
 
 type BenefitItem = {
-  title: string;
-  description: string;
+  // title: string;
+  // description: string;
+  key: string;
   icon: React.ElementType;
+  color: string;
 };
 
 const benefits: BenefitItem[] = [
-  {
-    title: "Gratis Konsultasi",
-    description:
-      "Konsultasi profesional tanpa biaya untuk membantu menyelesaikan kendala publikasi Anda.",
-    icon: FaComments,
-  },
-  {
-    title: "Gratis Editing Template",
-    description:
-      "Kami membantu menyempurnakan template karya ilmiah sesuai pedoman jurnal.",
-    icon: FaFileAlt,
-  },
-  {
-    title: "Gratis Cek Turnitin",
-    description:
-      "Pastikan orisinalitas tulisan Anda dengan layanan cek Turnitin gratis.",
-    icon: FaSearch,
-  },
-  {
-    title: "Gratis Review Artikel",
-    description:
-      "Ulasan mendalam dan saran perbaikan untuk meningkatkan kualitas artikel.",
-    icon: FaClipboardCheck,
-  },
-  {
-    title: "Gratis Revisi Minor",
-    description:
-      "Revisi minor tanpa biaya tambahan hingga artikel siap terbit.",
-    icon: FaEdit,
-  },
-  {
-    title: "LOA Fast Track",
-    description:
-      "Proses LOA lebih cepat untuk mendukung kebutuhan akademik Anda.",
-    icon: FaBolt,
-  },
+  { key: "consultation", icon: FaComments, color: "text-amber-500" },
+  { key: "editing", icon: FaFileAlt, color: "text-cyan-500" },
+  { key: "turnitin", icon: FaSearch, color: "text-blue-500" },
+  { key: "review", icon: FaClipboardCheck, color: "text-emerald-500" },
+  { key: "revision", icon: FaEdit, color: "text-rose-500" },
+  { key: "loa", icon: FaBolt, color: "text-yellow-300" },
 ];
+
+// const benefits: BenefitItem[] = [
+//   {
+//     title: "Gratis Konsultasi",
+//     description:
+//       "Konsultasi profesional tanpa biaya untuk membantu menyelesaikan kendala publikasi Anda.",
+//     key: "consultation",
+//     icon: FaComments,
+//     color: "text-amber-500",
+//   },
+//   {
+//     title: "Gratis Editing Template",
+//     description:
+//       "Kami membantu menyempurnakan template karya ilmiah sesuai pedoman jurnal.",
+//     icon: FaFileAlt,
+//     color: "text-cyan-500",
+//   },
+//   {
+//     title: "Gratis Cek Turnitin",
+//     description:
+//       "Pastikan orisinalitas tulisan Anda dengan layanan cek Turnitin gratis.",
+//     icon: FaSearch,
+//     color: "text-blue-500",
+//   },
+//   {
+//     title: "Gratis Review Artikel",
+//     description:
+//       "Ulasan mendalam dan saran perbaikan untuk meningkatkan kualitas artikel.",
+//     icon: FaClipboardCheck,
+//     color: "text-emerald-500",
+//   },
+//   {
+//     title: "Gratis Revisi Minor",
+//     description:
+//       "Revisi minor tanpa biaya tambahan hingga artikel siap terbit.",
+//     icon: FaEdit,
+//     color: "text-rose-500",
+//   },
+//   {
+//     title: "LOA Fast Track",
+//     description:
+//       "Proses LOA lebih cepat untuk mendukung kebutuhan akademik Anda.",
+//     icon: FaBolt,
+//     color: "text-yellow-300",
+//   },
+// ];
 
 const BenefitSection = () => {
   const t = useTranslations("Benefits");
@@ -89,18 +107,19 @@ const BenefitSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10">
             {benefits.map((item, index) => (
               <Feature
-                key={item.title}
+                key={item.key}
                 index={index}
-                title={item.title}
-                description={item.description}
+                title={t(`items.${item.key}.title`)}
+                description={t(`items.${item.key}.description`)}
                 icon={item.icon}
+                color={item.color}
               />
             ))}
           </div>
 
           {/* Banner CTA */}
-          <section className="flex items-center justify-center p-4 py-20">
-            <div className="relative w-full max-w-5xl rounded-2xl border border-indigo-500 overflow-hidden">
+          <section className="flex items-center justify-center py-20">
+            <div className="relative w-full rounded-2xl border border-indigo-500 overflow-hidden">
               {/* Diagonal Grid Background */}
 
               <div
@@ -121,33 +140,18 @@ const BenefitSection = () => {
               <div className="relative z-10 px-6 py-16 flex flex-col items-center text-center">
                 <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-md rounded-full px-6 py-2 mb-6">
                   <FaCheckCircle className="text-emerald-400" />
-                  <span className="text-slate-200 ">Jaminan Terbit 100%</span>
+                  <span className="text-slate-200">{t("cta.badge")}</span>
                 </div>
 
-                <h1 className="text-3xl md:text-4xl font-semibold text-white mb-8 max-w-5xl leading-tight">
-                  Kami memberikan jaminan bahwa artikel Anda akan diterbitkan
-                  tanpa masalah
+                <h1 className="text-2xl md:text-4xl font-semibold text-white mb-8 max-w-5xl leading-tight">
+                  {t("cta.title")}
                 </h1>
 
                 <button
                   onClick={handleToContact}
-                  className="bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95"
+                  className="bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2"
                 >
-                  Hubungi Sekarang
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="w-4 h-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
+                  {t("cta.button")}
                 </button>
               </div>
             </div>
@@ -163,9 +167,16 @@ type FeatureProps = {
   description: string;
   icon: React.ElementType;
   index: number;
+  color: string;
 };
 
-const Feature = ({ title, description, icon: Icon, index }: FeatureProps) => {
+const Feature = ({
+  title,
+  description,
+  icon: Icon,
+  index,
+  color,
+}: FeatureProps) => {
   const isFirstColumn = index % 3 === 0;
   const isFirstRow = index < 3;
 
@@ -190,7 +201,7 @@ const Feature = ({ title, description, icon: Icon, index }: FeatureProps) => {
 
       {/* Icon */}
       <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
-        <Icon className="size-6" />
+        <Icon className={`size-6 ${color}`} />
       </div>
 
       {/* Title */}

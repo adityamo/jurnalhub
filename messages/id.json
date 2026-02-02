@@ -59,7 +59,39 @@
       "highlight": "Keuntungan",
       "line2": "Yang Diperoleh Publish Dengan Lembaga Publikasi Cakrawala"
     },
-    "subtitle": "Publikasikan karya ilmiah Anda dengan proses yang mudah, transparan, dan terpercaya. Kami hadir untuk mendampingi Anda dari awal hingga artikel terbit."
+    "subtitle": "Publikasikan karya ilmiah Anda dengan proses yang mudah, transparan, dan terpercaya. Kami hadir untuk mendampingi Anda dari awal hingga artikel terbit.",
+    "items": {
+      "consultation": {
+        "title": "Gratis Konsultasi",
+        "description": "Konsultasi profesional tanpa biaya untuk membantu menyelesaikan kendala publikasi Anda."
+      },
+      "editing": {
+        "title": "Gratis Editing Template",
+        "description": "Kami membantu menyempurnakan template karya ilmiah sesuai pedoman jurnal."
+      },
+      "turnitin": {
+        "title": "Gratis Cek Turnitin",
+        "description": "Pastikan orisinalitas tulisan Anda dengan layanan cek Turnitin gratis."
+      },
+      "review": {
+        "title": "Gratis Review Artikel",
+        "description": "Ulasan mendalam dan saran perbaikan untuk meningkatkan kualitas artikel."
+      },
+      "revision": {
+        "title": "Gratis Revisi Minor",
+        "description": "Revisi minor tanpa biaya tambahan hingga artikel siap terbit."
+      },
+      "loa": {
+        "title": "LOA Fast Track",
+        "description": "Proses LOA lebih cepat untuk mendukung kebutuhan akademik Anda."
+      }
+    },
+
+    "cta": {
+      "badge": "Jaminan Terbit 100%",
+      "title": "Kami memberikan jaminan bahwa artikel Anda akan diterbitkan tanpa masalah",
+      "button": "Hubungi Sekarang"
+    }
   },
   "Product": {
     "badge": "Produk Kami",
@@ -75,6 +107,14 @@
       "highlight": "Tim Ahli",
       "line2": "Dibidangnya"
     }
+  },
+  "Tools": {
+    "badge": "Tools Pendukung",
+    "title": {
+      "highlight": "Tools Pendukung",
+      "line2": "Untuk Menujang Pengerjaan Kami"
+    },
+    "subtitle": "Dalam proses pendampingan, kami memanfaatkan berbagai alat bantu penulisan akademik untuk membantu meningkatkan keterbacaan, konsistensi bahasa, dan kesiapan naskah sebelum diajukan ke jurnal."
   },
   "Testimonials": {
     "badge": "Testimonials",
