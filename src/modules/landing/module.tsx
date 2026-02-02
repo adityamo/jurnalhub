@@ -9,6 +9,7 @@ import FAQSection from "./FAQSection";
 import CTASection from "./CTASection";
 import TestimonialsSection from "./TestimonialsSection";
 import BenefitSection from "./BenefitSection";
+import ToolsSection from "./ToolsSection";
 
 export default function LandingModule() {
   return (
@@ -19,6 +20,7 @@ export default function LandingModule() {
       <ProductSection />
       {/* <ProPersonSection /> */}
       <BenefitSection />
+      <ToolsSection />
       <TestimonialsSection />
       <FAQSection />
       <CTASection />

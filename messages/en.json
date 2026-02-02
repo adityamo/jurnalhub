@@ -67,7 +67,39 @@
       "highlight": "Benefits",
       "line2": "Publish on Lembaga Cakrawala"
     },
-    "subtitle": "Publish your scientific work with a simple, transparent, and reliable process. We're here to support you from start to finish."
+    "subtitle": "Publish your scientific work with a simple, transparent, and reliable process. We're here to support you from start to finish.",
+    "items": {
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "Professional consultation at no cost to help solve your publication issues."
+      },
+      "editing": {
+        "title": "Free Template Editing",
+        "description": "We help refine your manuscript template according to journal guidelines."
+      },
+      "turnitin": {
+        "title": "Free Turnitin Check",
+        "description": "Ensure the originality of your work with a free Turnitin check."
+      },
+      "review": {
+        "title": "Free Article Review",
+        "description": "In-depth review and improvement suggestions to enhance article quality."
+      },
+      "revision": {
+        "title": "Free Minor Revision",
+        "description": "Minor revisions at no additional cost until the article is ready to publish."
+      },
+      "loa": {
+        "title": "LOA Fast Track",
+        "description": "Faster LOA processing to support your academic needs."
+      }
+    },
+
+    "cta": {
+      "badge": "100% Publication Guarantee",
+      "title": "We guarantee your article will be published without any issues",
+      "button": "Contact Us"
+    }
   },
   "Professional": {
     "badge": "Our Team",
@@ -75,6 +107,14 @@
       "highlight": "Team of Experts",
       "line2": "in their fields"
     }
+  },
+  "Tools": {
+    "badge": "Supporting Tools",
+    "title": {
+      "highlight": "Supporting Tools ",
+      "line2": "to Support Journal Work"
+    },
+    "subtitle": "In the mentoring process, we utilize various academic writing tools to help improve readability, language consistency, and manuscript readiness before submission to journals."
   },
   "Testimonials": {
     "badge": "Testimonials",
